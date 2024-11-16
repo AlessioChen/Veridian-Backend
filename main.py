@@ -1,71 +1,65 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException, Form
-from fastapi.responses import JSONResponse, StreamingResponse
-from fastapi.middleware.cors import CORSMiddleware 
-import os
-from groq_services import GroqServices
-from career_service import CareerAdviceRequest, get_career_advice
-from general_service import GeneralRequest, get_general_response
-from agent_router import Router, RouterRequest
-from pydantic import BaseModel
+from fastapi import FastAPI, File, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse, JSONResponse
+from llm_service import LLMService, ChatRequest
 from pathlib import Path
-
-
-parent_directory = os.path.dirname(os.getcwd())
-AUDIO_DIR = f"{parent_directory}/audio-files"
+from groq_services import GroqServices
+import os
+import json
 
 app = FastAPI()
-router = Router()
+llm_service = LLMService()
 
 # Configuration
 MAX_FILE_SIZE = 25 * 1024 * 1024  # 25MB
 
+parent_directory = os.path.dirname(os.getcwd())
+AUDIO_DIR = f"{parent_directory}/audio-files"
 
-origins = ["http://localhost:3000", "http://127.0.0.1:8000"]
+origins = ["http://localhost:3000", "http://127.0.0.1:8000", "http://localhost:8000", "http://127.0.0.1:5500", "http://localhost:5500"]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-
-class ChatRequest(BaseModel):
-    message: str
-
-
 @app.post("/chat")
 async def chat(request: ChatRequest):
-    # Create router request from chat request
-    router_request = RouterRequest(message=request.message)
+    print(f"Chat endpoint received request: {request.message}")
     
-    # Route the request to the appropriate agent
-    agent_type, reason = router.route(router_request)
+    async def generate_response():
+        print("Starting response generation in endpoint")
+        try:
+            async for chunk in llm_service.generate_response("default_user", request.message):
+                content = chunk.get('content', '')
+                if content:
+                    # Format as SSE
+                    yield f"data: {json.dumps({'content': content})}\n\n"
+        except Exception as e:
+            print(f"Error in endpoint generate_response: {str(e)}")
+            raise
     
-    # Then, get response from the appropriate agent
-    if agent_type == "career_agent":
-        career_request = CareerAdviceRequest(prompt=request.message)
-        return StreamingResponse(
-            get_career_advice(career_request),
-            media_type="text/event-stream"
-        )
-    else:  # Default to general agent
-        general_request = GeneralRequest(prompt=request.message)
-        return StreamingResponse(
-            get_general_response(general_request),
-            media_type="text/event-stream"
-        )
 
+    return StreamingResponse(
+        generate_response(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+        }
+    )
 
+@app.post("/transcript/")
+async def upload_audio(file: UploadFile = File(...)):
+    SAVE_DIR = Path("uploaded_audio")
+    SAVE_DIR.mkdir(exist_ok=True)
+    
 @app.get("/hello/{name}")
 async def say_hello(name: str):
     return {"message": f"Hello {name}"}
 
-
-@app.post("/transcript/")
-async def upload_audio(file: UploadFile = File(...)):
-    save_dir = Path("uploaded_audio")
-    save_dir.mkdir(exist_ok=True)
 
     try:
         if not file:
@@ -76,9 +70,10 @@ async def upload_audio(file: UploadFile = File(...)):
 
         file_path = save_dir / file.filename
         with file_path.open("wb") as audio_file:
-            audio_file.write(await file.read())  
+            audio_file.write(await file.read())
 
         filename = os.path.dirname(__file__) + f"/{file_path}"
+        
         transcription = GroqServices().speech_to_text(filename)
         os.remove(filename)
 
@@ -88,7 +83,7 @@ async def upload_audio(file: UploadFile = File(...)):
                 "transcription": transcription,
             }
         )
-    
+
     except Exception as e:
         return JSONResponse(
             status_code=500,
