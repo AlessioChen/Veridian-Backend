@@ -4,23 +4,22 @@ from pydantic import BaseModel
 from groq import Groq
 from dotenv import load_dotenv
 
-# Load environment variables
 load_dotenv()
 
-class CareerAdviceRequest(BaseModel):
+class GeneralRequest(BaseModel):
     prompt: str
 
-def get_career_advice(request: CareerAdviceRequest):
+def get_general_response(request: GeneralRequest):
     try:
         client = Groq(api_key=os.getenv('GROQ_API'))
         
         completion = client.chat.completions.create(
-            model="llama-3.2-90b-text-preview",
+            model="llama-3.1-8b-instant",
             messages=[
-                {"role": "system", "content": "You are a career advisor specializing in helping people make strategic career transitions to increase their earnings."},
+                {"role": "system", "content": "You are a helpful AI assistant that can discuss any topic and provide thoughtful responses."},
                 {"role": "user", "content": request.prompt}
             ],
-            temperature=0,
+            temperature=0.7,
             max_tokens=1024,
             top_p=1,
             stream=True,

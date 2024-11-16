@@ -6,11 +6,15 @@ import tempfile
 from datetime import datetime
 from typing import Optional
 from career_service import CareerAdviceRequest, get_career_advice
+from general_service import GeneralRequest, get_general_response
+from agent_router import Router, RouterRequest
+from pydantic import BaseModel
 
 parent_directory = os.path.dirname(os.getcwd())
 AUDIO_DIR = f"{parent_directory}/audio-files"
 
 app = FastAPI(title="MP3 Processing API")
+router = Router()
 
 # CORS configuration
 # app.add_middleware(
@@ -154,10 +158,27 @@ async def process_mp3(file_data: bytes, filename: str) -> dict:
 async def say_hello(name: str):
     return {"message": f"Hello {name}"}
 
-# Usage {"prompt": "What career should I pursue?"}
-@app.post("/career-advice")
-async def career_advice(request: CareerAdviceRequest):
-    return StreamingResponse(
-        get_career_advice(request),
-        media_type="text/event-stream"
-    )
+class ChatRequest(BaseModel):
+    message: str
+
+@app.post("/chat")
+async def chat(request: ChatRequest):
+    # Create router request from chat request
+    router_request = RouterRequest(message=request.message)
+    
+    # Route the request to the appropriate agent
+    agent_type, reason = router.route(router_request)
+    
+    # Then, get response from the appropriate agent
+    if agent_type == "career_agent":
+        career_request = CareerAdviceRequest(prompt=request.message)
+        return StreamingResponse(
+            get_career_advice(career_request),
+            media_type="text/event-stream"
+        )
+    else:  # Default to general agent
+        general_request = GeneralRequest(prompt=request.message)
+        return StreamingResponse(
+            get_general_response(general_request),
+            media_type="text/event-stream"
+        )
