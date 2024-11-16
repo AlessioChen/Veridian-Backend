@@ -6,8 +6,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 class GeneralRequest(BaseModel):
     prompt: str
+
 
 def get_general_response(request: GeneralRequest):
     try:

@@ -30,9 +30,9 @@ app.add_middleware(
 )
 
 
-
 class ChatRequest(BaseModel):
     message: str
+
 
 @app.post("/chat")
 async def chat(request: ChatRequest):
@@ -55,6 +55,8 @@ async def chat(request: ChatRequest):
             get_general_response(general_request),
             media_type="text/event-stream"
         )
+
+
 @app.get("/hello/{name}")
 async def say_hello(name: str):
     return {"message": f"Hello {name}"}
@@ -62,10 +64,8 @@ async def say_hello(name: str):
 
 @app.post("/transcript/")
 async def upload_audio(file: UploadFile = File(...)):
-    SAVE_DIR = Path("uploaded_audio")
-    SAVE_DIR.mkdir(exist_ok=True) 
-   
- 
+    save_dir = Path("uploaded_audio")
+    save_dir.mkdir(exist_ok=True)
 
     try:
         if not file:
@@ -74,16 +74,13 @@ async def upload_audio(file: UploadFile = File(...)):
                 content={"error": "No file uploaded"}
             )
 
-        
-        file_path = SAVE_DIR / file.filename
+        file_path = save_dir / file.filename
         with file_path.open("wb") as audio_file:
             audio_file.write(await file.read())  
 
-        
         filename = os.path.dirname(__file__) + f"/{file_path}"
-        transcription =  GroqServices.speech_to_text(filename)
+        transcription = GroqServices().speech_to_text(filename)
         os.remove(filename)
-
 
         return JSONResponse(
             status_code=200,

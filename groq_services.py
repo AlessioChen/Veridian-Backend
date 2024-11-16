@@ -1,26 +1,19 @@
 import os
 from groq import Groq
-import tempfile
 from dotenv import load_dotenv
-
-
 load_dotenv()
-
-# Configuration
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-groq_client = Groq(api_key=GROQ_API_KEY)
-
-
-
 
 
 class GroqServices:
+    def __init__(self):
+        self.client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-    def speech_to_text(filename):
-        with open(filename, "rb") as file:
+    def speech_to_text(self, filename):
+        with open(filename, 'rb') as file:
+            file_content = file.read()
 
-            translation = groq_client.audio.translations.create(
-                file=(filename, file.read()), # Required audio file
+            translation = self.client.audio.translations.create(
+                file=(filename, file_content),  # Required audio file
                 model="whisper-large-v3", 
                 prompt="Transcribe the following audio into text", 
                 response_format="json",  
