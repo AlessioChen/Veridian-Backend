@@ -1,0 +1,2037 @@
+{
+  "regions": [
+    {
+      "name": "United Kingdom",
+      "code": "K02000001",
+      "earnings": 30676.5
+    },
+    {
+      "name": "Great Britain",
+      "code": "K03000001",
+      "earnings": 30717.0
+    },
+    {
+      "name": "England and Wales",
+      "code": "K04000001",
+      "earnings": 30667.5
+    },
+    {
+      "name": "England",
+      "code": "E92000001",
+      "earnings": 30757.5
+    },
+    {
+      "name": "North East",
+      "code": "E12000001",
+      "earnings": 27378.0
+    },
+    {
+      "name": "Darlington UA",
+      "code": "E06000005",
+      "earnings": 27211.5
+    },
+    {
+      "name": "Hartlepool UA",
+      "code": "E06000001",
+      "earnings": 28044.0
+    },
+    {
+      "name": "Middlesbrough UA",
+      "code": "E06000002",
+      "earnings": 26599.5
+    },
+    {
+      "name": "Redcar and Cleveland UA",
+      "code": "E06000003",
+      "earnings": 26001.0
+    },
+    {
+      "name": "Stockton-on-Tees UA",
+      "code": "E06000004",
+      "earnings": 26311.5
+    },
+    {
+      "name": "County Durham UA",
+      "code": "E06000047",
+      "earnings": 26995.5
+    },
+    {
+      "name": "Northumberland UA",
+      "code": "E06000057",
+      "earnings": 27351.0
+    },
+    {
+      "name": "Tyne and Wear Met County",
+      "code": "E11000007",
+      "earnings": 27616.5,
+      "sub_regions": [
+        {
+          "name": "Gateshead",
+          "code": "E08000037",
+          "earnings": 26046.0
+        },
+        {
+          "name": "Newcastle upon Tyne",
+          "code": "E08000021",
+          "earnings": 28786.5
+        },
+        {
+          "name": "North Tyneside",
+          "code": "E08000022",
+          "earnings": 27850.5
+        },
+        {
+          "name": "South Tyneside",
+          "code": "E08000023",
+          "earnings": 26928.0
+        },
+        {
+          "name": "Sunderland",
+          "code": "E08000024",
+          "earnings": 26743.5
+        }
+      ]
+    },
+    {
+      "name": "North West",
+      "code": "E12000002",
+      "earnings": 29083.5
+    },
+    {
+      "name": "Blackburn with Darwen UA",
+      "code": "E06000008",
+      "earnings": 28188.0
+    },
+    {
+      "name": "Blackpool UA",
+      "code": "E06000009",
+      "earnings": 26914.5
+    },
+    {
+      "name": "Halton UA",
+      "code": "E06000006",
+      "earnings": 30897.0
+    },
+    {
+      "name": "Warrington UA",
+      "code": "E06000007",
+      "earnings": 30244.5
+    },
+    {
+      "name": "Cheshire East UA",
+      "code": "E06000049",
+      "earnings": 29322.0
+    },
+    {
+      "name": "Cheshire West and Chester",
+      "code": "E06000050",
+      "earnings": 29061.0
+    },
+    {
+      "name": "Cumberland UA",
+      "code": "E06000063",
+      "earnings": 30460.5
+    },
+    {
+      "name": "Westmorland and Furness UA",
+      "code": "E06000064",
+      "earnings": 29776.5
+    },
+    {
+      "name": "Greater Manchester Met County",
+      "code": "E11000001",
+      "earnings": 29070.0,
+      "sub_regions": [
+        {
+          "name": "Bolton",
+          "code": "E08000001",
+          "earnings": 26406.0
+        },
+        {
+          "name": "Bury",
+          "code": "E08000002",
+          "earnings": 27814.5
+        },
+        {
+          "name": "Manchester",
+          "code": "E08000003",
+          "earnings": 31801.5
+        },
+        {
+          "name": "Oldham",
+          "code": "E08000004",
+          "earnings": 26761.5
+        },
+        {
+          "name": "Rochdale",
+          "code": "E08000005",
+          "earnings": 26869.5
+        },
+        {
+          "name": "Salford",
+          "code": "E08000006",
+          "earnings": 29736.0
+        },
+        {
+          "name": "Stockport",
+          "code": "E08000007",
+          "earnings": 29497.5
+        },
+        {
+          "name": "Tameside",
+          "code": "E08000008",
+          "earnings": 25533.0
+        },
+        {
+          "name": "Trafford",
+          "code": "E08000009",
+          "earnings": 27657.0
+        },
+        {
+          "name": "Wigan",
+          "code": "E08000010",
+          "earnings": 26212.5
+        }
+      ]
+    },
+    {
+      "name": "Lancashire",
+      "code": "E10000017",
+      "earnings": 27931.5,
+      "sub_regions": [
+        {
+          "name": "Burnley",
+          "code": "E07000117",
+          "earnings": 23382.0
+        },
+        {
+          "name": "Chorley",
+          "code": "E07000118",
+          "earnings": 27706.5
+        },
+        {
+          "name": "Fylde",
+          "code": "E07000119",
+          "earnings": 34699.5
+        },
+        {
+          "name": "Hyndburn",
+          "code": "E07000120",
+          "earnings": 25101.0
+        },
+        {
+          "name": "Lancaster",
+          "code": "E07000121",
+          "earnings": 29245.5
+        },
+        {
+          "name": "Pendle",
+          "code": "E07000122",
+          "earnings": 25425.0
+        },
+        {
+          "name": "Preston",
+          "code": "E07000123",
+          "earnings": 25420.5
+        },
+        {
+          "name": "Ribble Valley",
+          "code": "E07000124",
+          "earnings": 37125.0
+        },
+        {
+          "name": "Rossendale",
+          "code": "E07000125",
+          "earnings": 25893.0
+        },
+        {
+          "name": "South Ribble",
+          "code": "E07000126",
+          "earnings": 29808.0
+        },
+        {
+          "name": "West Lancashire",
+          "code": "E07000127",
+          "earnings": 30348.0
+        },
+        {
+          "name": "Wyre",
+          "code": "E07000128",
+          "earnings": 25096.5
+        }
+      ]
+    },
+    {
+      "name": "Merseyside Met County",
+      "code": "E11000002",
+      "earnings": 29196.0,
+      "sub_regions": [
+        {
+          "name": "Knowsley",
+          "code": "E08000011",
+          "earnings": 29965.5
+        },
+        {
+          "name": "Liverpool",
+          "code": "E08000012",
+          "earnings": 30186.0
+        },
+        {
+          "name": "St. Helens",
+          "code": "E08000013",
+          "earnings": 26172.0
+        },
+        {
+          "name": "Sefton",
+          "code": "E08000014",
+          "earnings": 28809.0
+        },
+        {
+          "name": "Wirral",
+          "code": "E08000015",
+          "earnings": 27198.0
+        }
+      ]
+    },
+    {
+      "name": "Yorkshire and The Humber",
+      "code": "E12000003",
+      "earnings": 28386.0
+    },
+    {
+      "name": "East Riding of Yorkshire UA",
+      "code": "E06000011",
+      "earnings": 27319.5
+    },
+    {
+      "name": "Kingston upon Hull UA",
+      "code": "E06000010",
+      "earnings": 27405.0
+    },
+    {
+      "name": "North East Lincolnshire UA",
+      "code": "E06000012",
+      "earnings": 29259.0
+    },
+    {
+      "name": "North Lincolnshire UA",
+      "code": "E06000013",
+      "earnings": 29538.0
+    },
+    {
+      "name": "York UA",
+      "code": "E06000014",
+      "earnings": 30091.5
+    },
+    {
+      "name": "North Yorkshire UA",
+      "code": "E06000065",
+      "earnings": 26613.0
+    },
+    {
+      "name": "South Yorkshire Met County",
+      "code": "E11000003",
+      "earnings": 28404.0,
+      "sub_regions": [
+        {
+          "name": "Barnsley",
+          "code": "E08000016",
+          "earnings": 29929.5
+        },
+        {
+          "name": "Doncaster",
+          "code": "E08000017",
+          "earnings": 27373.5
+        },
+        {
+          "name": "Rotherham",
+          "code": "E08000018",
+          "earnings": 26001.0
+        },
+        {
+          "name": "Sheffield",
+          "code": "E08000019",
+          "earnings": 28714.5
+        }
+      ]
+    },
+    {
+      "name": "West Yorkshire Met County",
+      "code": "E11000006",
+      "earnings": 28813.5,
+      "sub_regions": [
+        {
+          "name": "Bradford",
+          "code": "E08000032",
+          "earnings": 27963.0
+        },
+        {
+          "name": "Calderdale",
+          "code": "E08000033",
+          "earnings": 28170.0
+        },
+        {
+          "name": "Kirklees",
+          "code": "E08000034",
+          "earnings": 26352.0
+        },
+        {
+          "name": "Leeds",
+          "code": "E08000035",
+          "earnings": 29929.5
+        },
+        {
+          "name": "Wakefield",
+          "code": "E08000036",
+          "earnings": 29556.0
+        }
+      ]
+    },
+    {
+      "name": "East Midlands",
+      "code": "E12000004",
+      "earnings": 28062.0
+    },
+    {
+      "name": "Derby UA",
+      "code": "E06000015",
+      "earnings": 34033.5
+    },
+    {
+      "name": "Leicester UA",
+      "code": "E06000016",
+      "earnings": 26401.5
+    },
+    {
+      "name": "North Northamptonshire UA",
+      "code": "E06000061",
+      "earnings": 27972.0
+    },
+    {
+      "name": "Nottingham UA",
+      "code": "E06000018",
+      "earnings": 26626.5
+    },
+    {
+      "name": "Rutland UA",
+      "code": "E06000017",
+      "earnings": 31617.0
+    },
+    {
+      "name": "West Northamptonshire UA",
+      "code": "E06000062",
+      "earnings": 29700.0
+    },
+    {
+      "name": "Derbyshire",
+      "code": "E10000007",
+      "earnings": 27940.5,
+      "sub_regions": [
+        {
+          "name": "Amber Valley",
+          "code": "E07000032",
+          "earnings": 28354.5
+        },
+        {
+          "name": "Bolsover",
+          "code": "E07000033",
+          "earnings": 25951.5
+        },
+        {
+          "name": "Chesterfield",
+          "code": "E07000034",
+          "earnings": 26901.0
+        },
+        {
+          "name": "Derbyshire Dales",
+          "code": "E07000035",
+          "earnings": 28458.0
+        },
+        {
+          "name": "Erewash",
+          "code": "E07000036",
+          "earnings": 29889.0
+        },
+        {
+          "name": "High Peak",
+          "code": "E07000037",
+          "earnings": 25857.0
+        },
+        {
+          "name": "North East Derbyshire",
+          "code": "E07000038",
+          "earnings": 26973.0
+        },
+        {
+          "name": "South Derbyshire",
+          "code": "E07000039",
+          "earnings": 29511.0
+        }
+      ]
+    },
+    {
+      "name": "Leicestershire",
+      "code": "E10000018",
+      "earnings": 28611.0,
+      "sub_regions": [
+        {
+          "name": "Blaby",
+          "code": "E07000129",
+          "earnings": 29911.5
+        },
+        {
+          "name": "Charnwood",
+          "code": "E07000130",
+          "earnings": 28827.0
+        },
+        {
+          "name": "Harborough",
+          "code": "E07000131",
+          "earnings": 29668.5
+        },
+        {
+          "name": "Hinckley and Bosworth",
+          "code": "E07000132",
+          "earnings": 27972.0
+        },
+        {
+          "name": "Melton",
+          "code": "E07000133",
+          "earnings": 26010.0
+        },
+        {
+          "name": "North West Leicestershire",
+          "code": "E07000134",
+          "earnings": 29367.0
+        },
+        {
+          "name": "Oadby and Wigston",
+          "code": "E07000135",
+          "earnings": 21159.0
+        }
+      ]
+    },
+    {
+      "name": "Lincolnshire",
+      "code": "E10000019",
+      "earnings": 27207.0,
+      "sub_regions": [
+        {
+          "name": "Boston",
+          "code": "E07000136",
+          "earnings": 25614.0
+        },
+        {
+          "name": "East Lindsey",
+          "code": "E07000137",
+          "earnings": 25330.5
+        },
+        {
+          "name": "Lincoln",
+          "code": "E07000138",
+          "earnings": 29074.5
+        },
+        {
+          "name": "North Kesteven",
+          "code": "E07000139",
+          "earnings": 26824.5
+        },
+        {
+          "name": "South Holland",
+          "code": "E07000140",
+          "earnings": 26293.5
+        },
+        {
+          "name": "South Kesteven",
+          "code": "E07000141",
+          "earnings": 27792.0
+        },
+        {
+          "name": "West Lindsey",
+          "code": "E07000142",
+          "earnings": 27675.0
+        }
+      ]
+    },
+    {
+      "name": "Nottinghamshire",
+      "code": "E10000024",
+      "earnings": 26752.5,
+      "sub_regions": [
+        {
+          "name": "Ashfield",
+          "code": "E07000170",
+          "earnings": 26221.5
+        },
+        {
+          "name": "Bassetlaw",
+          "code": "E07000171",
+          "earnings": 24723.0
+        },
+        {
+          "name": "Broxtowe",
+          "code": "E07000172",
+          "earnings": 26766.0
+        },
+        {
+          "name": "Gedling",
+          "code": "E07000173",
+          "earnings": 28998.0
+        },
+        {
+          "name": "Mansfield",
+          "code": "E07000174",
+          "earnings": 27751.5
+        },
+        {
+          "name": "Newark and Sherwood",
+          "code": "E07000175",
+          "earnings": 27855.0
+        },
+        {
+          "name": "Rushcliffe",
+          "code": "E07000176",
+          "earnings": 28305.0
+        }
+      ]
+    },
+    {
+      "name": "West Midlands",
+      "code": "E12000005",
+      "earnings": 29281.5
+    },
+    {
+      "name": "Herefordshire UA",
+      "code": "E06000019",
+      "earnings": 26370.0
+    },
+    {
+      "name": "Stoke-on-Trent UA",
+      "code": "E06000021",
+      "earnings": 27315.0
+    },
+    {
+      "name": "Telford and Wrekin UA",
+      "code": "E06000020",
+      "earnings": 29880.0
+    },
+    {
+      "name": "Shropshire UA",
+      "code": "E06000051",
+      "earnings": 27639.0
+    },
+    {
+      "name": "Staffordshire",
+      "code": "E10000028",
+      "earnings": 29070.0,
+      "sub_regions": [
+        {
+          "name": "Cannock Chase",
+          "code": "E07000192",
+          "earnings": 27616.5
+        },
+        {
+          "name": "East Staffordshire",
+          "code": "E07000193",
+          "earnings": 30771.0
+        },
+        {
+          "name": "Lichfield",
+          "code": "E07000194",
+          "earnings": 28062.0
+        },
+        {
+          "name": "Newcastle-under-Lyme",
+          "code": "E07000195",
+          "earnings": 28368.0
+        },
+        {
+          "name": "South Staffordshire",
+          "code": "E07000196",
+          "earnings": 28206.0
+        },
+        {
+          "name": "Stafford",
+          "code": "E07000197",
+          "earnings": 30222.0
+        },
+        {
+          "name": "Staffordshire Moorlands",
+          "code": "E07000198",
+          "earnings": 28552.5
+        },
+        {
+          "name": "Tamworth",
+          "code": "E07000199",
+          "earnings": 26509.5
+        }
+      ]
+    },
+    {
+      "name": "Warwickshire",
+      "code": "E10000031",
+      "earnings": 29317.5,
+      "sub_regions": [
+        {
+          "name": "North Warwickshire",
+          "code": "E07000218",
+          "earnings": 28489.5
+        },
+        {
+          "name": "Nuneaton and Bedworth",
+          "code": "E07000219",
+          "earnings": 26797.5
+        },
+        {
+          "name": "Rugby",
+          "code": "E07000220",
+          "earnings": 29187.0
+        },
+        {
+          "name": "Stratford-on-Avon",
+          "code": "E07000221",
+          "earnings": 28687.5
+        },
+        {
+          "name": "Warwick",
+          "code": "E07000222",
+          "earnings": 31248.0
+        }
+      ]
+    },
+    {
+      "name": "West Midlands Met County",
+      "code": "E11000005",
+      "earnings": 29920.5,
+      "sub_regions": [
+        {
+          "name": "Birmingham",
+          "code": "E08000025",
+          "earnings": 29340.0
+        },
+        {
+          "name": "Coventry",
+          "code": "E08000026",
+          "earnings": 35905.5
+        },
+        {
+          "name": "Dudley",
+          "code": "E08000027",
+          "earnings": 27688.5
+        },
+        {
+          "name": "Sandwell",
+          "code": "E08000028",
+          "earnings": 27598.5
+        },
+        {
+          "name": "Solihull",
+          "code": "E08000029",
+          "earnings": 30186.0
+        },
+        {
+          "name": "Walsall",
+          "code": "E08000030",
+          "earnings": 29169.0
+        },
+        {
+          "name": "Wolverhampton",
+          "code": "E08000031",
+          "earnings": 28831.5
+        }
+      ]
+    },
+    {
+      "name": "Worcestershire",
+      "code": "E10000034",
+      "earnings": 29326.5,
+      "sub_regions": [
+        {
+          "name": "Bromsgrove",
+          "code": "E07000234",
+          "earnings": 29704.5
+        },
+        {
+          "name": "Malvern Hills",
+          "code": "E07000235",
+          "earnings": 29934.0
+        },
+        {
+          "name": "Redditch",
+          "code": "E07000236",
+          "earnings": 29047.5
+        },
+        {
+          "name": "Worcester",
+          "code": "E07000237",
+          "earnings": 28458.0
+        },
+        {
+          "name": "Wychavon",
+          "code": "E07000238",
+          "earnings": 29007.0
+        },
+        {
+          "name": "Wyre Forest",
+          "code": "E07000239",
+          "earnings": 27886.5
+        }
+      ]
+    },
+    {
+      "name": "East",
+      "code": "E12000006",
+      "earnings": 30307.5
+    },
+    {
+      "name": "Bedford UA",
+      "code": "E06000055",
+      "earnings": 28993.5
+    },
+    {
+      "name": "Central Bedfordshire UA",
+      "code": "E06000056",
+      "earnings": 31099.5
+    },
+    {
+      "name": "Luton UA",
+      "code": "E06000032",
+      "earnings": 29650.5
+    },
+    {
+      "name": "Peterborough UA",
+      "code": "E06000031",
+      "earnings": 29106.0
+    },
+    {
+      "name": "Southend-on-Sea UA",
+      "code": "E06000033",
+      "earnings": 27382.5
+    },
+    {
+      "name": "Thurrock UA",
+      "code": "E06000034",
+      "earnings": 30370.5
+    },
+    {
+      "name": "Cambridgeshire",
+      "code": "E10000003",
+      "earnings": 33147.0,
+      "sub_regions": [
+        {
+          "name": "Cambridge",
+          "code": "E07000008",
+          "earnings": 35676.0
+        },
+        {
+          "name": "East Cambridgeshire",
+          "code": "E07000009",
+          "earnings": 27490.5
+        },
+        {
+          "name": "Fenland",
+          "code": "E07000010",
+          "earnings": 27589.5
+        },
+        {
+          "name": "Huntingdonshire",
+          "code": "E07000011",
+          "earnings": 31270.5
+        },
+        {
+          "name": "South Cambridgeshire",
+          "code": "E07000012",
+          "earnings": 34843.5
+        }
+      ]
+    },
+    {
+      "name": "Essex",
+      "code": "E10000012",
+      "earnings": 29596.5,
+      "sub_regions": [
+        {
+          "name": "Basildon",
+          "code": "E07000066",
+          "earnings": 29056.5
+        },
+        {
+          "name": "Braintree",
+          "code": "E07000067",
+          "earnings": 28512.0
+        },
+        {
+          "name": "Brentwood",
+          "code": "E07000068",
+          "earnings": 32832.0
+        },
+        {
+          "name": "Castle Point",
+          "code": "E07000069",
+          "earnings": 29857.5
+        },
+        {
+          "name": "Chelmsford",
+          "code": "E07000070",
+          "earnings": 30523.5
+        },
+        {
+          "name": "Colchester",
+          "code": "E07000071",
+          "earnings": 28570.5
+        },
+        {
+          "name": "Epping Forest",
+          "code": "E07000072",
+          "earnings": 31662.0
+        },
+        {
+          "name": "Harlow",
+          "code": "E07000073",
+          "earnings": 28035.0
+        },
+        {
+          "name": "Maldon",
+          "code": "E07000074",
+          "earnings": 27333.0
+        },
+        {
+          "name": "Rochford",
+          "code": "E07000075",
+          "earnings": 28138.5
+        },
+        {
+          "name": "Tendring",
+          "code": "E07000076",
+          "earnings": 26743.5
+        },
+        {
+          "name": "Uttlesford",
+          "code": "E07000077",
+          "earnings": 32323.5
+        }
+      ]
+    },
+    {
+      "name": "Hertfordshire",
+      "code": "E10000015",
+      "earnings": 32346.0,
+      "sub_regions": [
+        {
+          "name": "Broxbourne",
+          "code": "E07000095",
+          "earnings": 30064.5
+        },
+        {
+          "name": "Dacorum",
+          "code": "E07000096",
+          "earnings": 30186.0
+        },
+        {
+          "name": "East Hertfordshire",
+          "code": "E07000242",
+          "earnings": 33462.0
+        },
+        {
+          "name": "Hertsmere",
+          "code": "E07000098",
+          "earnings": 33025.5
+        },
+        {
+          "name": "North Hertfordshire",
+          "code": "E07000099",
+          "earnings": 32814.0
+        },
+        {
+          "name": "St Albans",
+          "code": "E07000240",
+          "earnings": 32265.0
+        },
+        {
+          "name": "Stevenage",
+          "code": "E07000243",
+          "earnings": 33115.5
+        },
+        {
+          "name": "Three Rivers",
+          "code": "E07000102",
+          "earnings": 38812.5
+        },
+        {
+          "name": "Watford",
+          "code": "E07000103",
+          "earnings": 30780.0
+        },
+        {
+          "name": "Welwyn Hatfield",
+          "code": "E07000241",
+          "earnings": 33376.5
+        }
+      ]
+    },
+    {
+      "name": "Norfolk",
+      "code": "E10000020",
+      "earnings": 28741.5,
+      "sub_regions": [
+        {
+          "name": "Breckland",
+          "code": "E07000143",
+          "earnings": 27486.0
+        },
+        {
+          "name": "Broadland",
+          "code": "E07000144",
+          "earnings": 31320.0
+        },
+        {
+          "name": "Great Yarmouth",
+          "code": "E07000145",
+          "earnings": 28341.0
+        },
+        {
+          "name": "King's Lynn and West Norfolk",
+          "code": "E07000146",
+          "earnings": 28557.0
+        },
+        {
+          "name": "North Norfolk",
+          "code": "E07000147",
+          "earnings": 25699.5
+        },
+        {
+          "name": "Norwich",
+          "code": "E07000148",
+          "earnings": 28782.0
+        },
+        {
+          "name": "South Norfolk",
+          "code": "E07000149",
+          "earnings": 29997.0
+        }
+      ]
+    },
+    {
+      "name": "Suffolk",
+      "code": "E10000029",
+      "earnings": 28633.5,
+      "sub_regions": [
+        {
+          "name": "Babergh",
+          "code": "E07000200",
+          "earnings": 25852.5
+        },
+        {
+          "name": "Ipswich",
+          "code": "E07000202",
+          "earnings": 28701.0
+        },
+        {
+          "name": "Mid Suffolk",
+          "code": "E07000203",
+          "earnings": 26833.5
+        },
+        {
+          "name": "East Suffolk",
+          "code": "E07000244",
+          "earnings": 28984.5
+        },
+        {
+          "name": "West Suffolk",
+          "code": "E07000245",
+          "earnings": 28948.5
+        }
+      ]
+    },
+    {
+      "name": "London",
+      "code": "E12000007",
+      "earnings": 37750.5
+    },
+    {
+      "name": "Inner London",
+      "code": "E13000001",
+      "earnings": 40621.5,
+      "sub_regions": [
+        {
+          "name": "Camden",
+          "code": "E09000007",
+          "earnings": 38250.0
+        },
+        {
+          "name": "City of London",
+          "code": "E09000001",
+          "earnings": 50400.0
+        },
+        {
+          "name": "Hackney",
+          "code": "E09000012",
+          "earnings": 38916.0
+        },
+        {
+          "name": "Hammersmith and Fulham",
+          "code": "E09000013",
+          "earnings": 37300.5
+        },
+        {
+          "name": "Haringey",
+          "code": "E09000014",
+          "earnings": 32278.5
+        },
+        {
+          "name": "Islington",
+          "code": "E09000019",
+          "earnings": 40383.0
+        },
+        {
+          "name": "Kensington and Chelsea",
+          "code": "E09000020",
+          "earnings": 32017.5
+        },
+        {
+          "name": "Lambeth",
+          "code": "E09000022",
+          "earnings": 34672.5
+        },
+        {
+          "name": "Lewisham",
+          "code": "E09000023",
+          "earnings": 34362.0
+        },
+        {
+          "name": "Newham",
+          "code": "E09000025",
+          "earnings": 35662.5
+        },
+        {
+          "name": "Southwark",
+          "code": "E09000028",
+          "earnings": 36153.0
+        },
+        {
+          "name": "Tower Hamlets",
+          "code": "E09000030",
+          "earnings": 47425.5
+        },
+        {
+          "name": "Wandsworth",
+          "code": "E09000032",
+          "earnings": 36139.5
+        },
+        {
+          "name": "Westminster",
+          "code": "E09000033",
+          "earnings": 40747.5
+        }
+      ]
+    },
+    {
+      "name": "Outer London",
+      "code": "E13000002",
+      "earnings": 32395.5,
+      "sub_regions": [
+        {
+          "name": "Barking and Dagenham",
+          "code": "E09000002",
+          "earnings": 29178.0
+        },
+        {
+          "name": "Barnet",
+          "code": "E09000003",
+          "earnings": 33565.5
+        },
+        {
+          "name": "Bexley",
+          "code": "E09000004",
+          "earnings": 31621.5
+        },
+        {
+          "name": "Brent",
+          "code": "E09000005",
+          "earnings": 30474.0
+        },
+        {
+          "name": "Bromley",
+          "code": "E09000006",
+          "earnings": 33426.0
+        },
+        {
+          "name": "Croydon",
+          "code": "E09000008",
+          "earnings": 34753.5
+        },
+        {
+          "name": "Ealing",
+          "code": "E09000009",
+          "earnings": 32553.0
+        },
+        {
+          "name": "Enfield",
+          "code": "E09000010",
+          "earnings": 32328.0
+        },
+        {
+          "name": "Greenwich",
+          "code": "E09000011",
+          "earnings": 31279.5
+        },
+        {
+          "name": "Harrow",
+          "code": "E09000015",
+          "earnings": 29700.0
+        },
+        {
+          "name": "Havering",
+          "code": "E09000016",
+          "earnings": 36981.0
+        },
+        {
+          "name": "Hillingdon",
+          "code": "E09000017",
+          "earnings": 30888.0
+        },
+        {
+          "name": "Hounslow",
+          "code": "E09000018",
+          "earnings": 32562.0
+        },
+        {
+          "name": "Kingston upon Thames",
+          "code": "E09000021",
+          "earnings": 32598.0
+        },
+        {
+          "name": "Merton",
+          "code": "E09000024",
+          "earnings": 33372.0
+        },
+        {
+          "name": "Redbridge",
+          "code": "E09000026",
+          "earnings": 29943.0
+        },
+        {
+          "name": "Richmond upon Thames",
+          "code": "E09000027",
+          "earnings": 32512.5
+        },
+        {
+          "name": "Sutton",
+          "code": "E09000029",
+          "earnings": 31891.5
+        },
+        {
+          "name": "Waltham Forest",
+          "code": "E09000031",
+          "earnings": 31108.5
+        }
+      ]
+    },
+    {
+      "name": "South East",
+      "code": "E12000008",
+      "earnings": 31693.5
+    },
+    {
+      "name": "Bracknell Forest UA",
+      "code": "E06000036",
+      "earnings": 35041.5
+    },
+    {
+      "name": "Brighton and Hove UA",
+      "code": "E06000043",
+      "earnings": 30168.0
+    },
+    {
+      "name": "Buckinghamshire UA",
+      "code": "E06000060",
+      "earnings": 33093.0
+    },
+    {
+      "name": "Isle of Wight UA",
+      "code": "E06000046",
+      "earnings": 27265.5
+    },
+    {
+      "name": "Medway UA",
+      "code": "E06000035",
+      "earnings": 29092.5
+    },
+    {
+      "name": "Milton Keynes UA",
+      "code": "E06000042",
+      "earnings": 35041.5
+    },
+    {
+      "name": "Portsmouth UA",
+      "code": "E06000044",
+      "earnings": 32692.5
+    },
+    {
+      "name": "Reading UA",
+      "code": "E06000038",
+      "earnings": 35271.0
+    },
+    {
+      "name": "Slough UA",
+      "code": "E06000039",
+      "earnings": 34830.0
+    },
+    {
+      "name": "Southampton UA",
+      "code": "E06000045",
+      "earnings": 31675.5
+    },
+    {
+      "name": "West Berkshire UA",
+      "code": "E06000037",
+      "earnings": 35077.5
+    },
+    {
+      "name": "Windsor and Maidenhead UA",
+      "code": "E06000040",
+      "earnings": 34461.0
+    },
+    {
+      "name": "Wokingham",
+      "code": "E06000041",
+      "earnings": 35361.0
+    },
+    {
+      "name": "East Sussex",
+      "code": "E10000011",
+      "earnings": 28089.0,
+      "sub_regions": [
+        {
+          "name": "Eastbourne",
+          "code": "E07000061",
+          "earnings": 29349.0
+        },
+        {
+          "name": "Hastings",
+          "code": "E07000062",
+          "earnings": 25497.0
+        },
+        {
+          "name": "Lewes",
+          "code": "E07000063",
+          "earnings": 29200.5
+        },
+        {
+          "name": "Rother",
+          "code": "E07000064",
+          "earnings": 25992.0
+        },
+        {
+          "name": "Wealden",
+          "code": "E07000065",
+          "earnings": 28512.0
+        }
+      ]
+    },
+    {
+      "name": "Hampshire",
+      "code": "E10000014",
+      "earnings": 31086.0,
+      "sub_regions": [
+        {
+          "name": "Basingstoke and Deane",
+          "code": "E07000084",
+          "earnings": 33480.0
+        },
+        {
+          "name": "East Hampshire",
+          "code": "E07000085",
+          "earnings": 28264.5
+        },
+        {
+          "name": "Eastleigh",
+          "code": "E07000086",
+          "earnings": 29790.0
+        },
+        {
+          "name": "Fareham",
+          "code": "E07000087",
+          "earnings": 31689.0
+        },
+        {
+          "name": "Gosport",
+          "code": "E07000088",
+          "earnings": 28494.0
+        },
+        {
+          "name": "Hart",
+          "code": "E07000089",
+          "earnings": 34002.0
+        },
+        {
+          "name": "Havant",
+          "code": "E07000090",
+          "earnings": 28296.0
+        },
+        {
+          "name": "New Forest",
+          "code": "E07000091",
+          "earnings": 29673.0
+        },
+        {
+          "name": "Rushmoor",
+          "code": "E07000092",
+          "earnings": 32751.0
+        },
+        {
+          "name": "Test Valley",
+          "code": "E07000093",
+          "earnings": 30186.0
+        },
+        {
+          "name": "Winchester",
+          "code": "E07000094",
+          "earnings": 30717.0
+        }
+      ]
+    },
+    {
+      "name": "Kent",
+      "code": "E10000016",
+      "earnings": 29322.0,
+      "sub_regions": [
+        {
+          "name": "Ashford",
+          "code": "E07000105",
+          "earnings": 26905.5
+        },
+        {
+          "name": "Canterbury",
+          "code": "E07000106",
+          "earnings": 29623.5
+        },
+        {
+          "name": "Dartford",
+          "code": "E07000107",
+          "earnings": 33444.0
+        },
+        {
+          "name": "Dover",
+          "code": "E07000108",
+          "earnings": 31743.0
+        },
+        {
+          "name": "Gravesham",
+          "code": "E07000109",
+          "earnings": 34411.5
+        },
+        {
+          "name": "Maidstone",
+          "code": "E07000110",
+          "earnings": 27679.5
+        },
+        {
+          "name": "Sevenoaks",
+          "code": "E07000111",
+          "earnings": 27166.5
+        },
+        {
+          "name": "Folkestone and Hythe",
+          "code": "E07000112",
+          "earnings": 29659.5
+        },
+        {
+          "name": "Swale",
+          "code": "E07000113",
+          "earnings": 28539.0
+        },
+        {
+          "name": "Thanet",
+          "code": "E07000114",
+          "earnings": 24745.5
+        },
+        {
+          "name": "Tonbridge and Malling",
+          "code": "E07000115",
+          "earnings": 28503.0
+        },
+        {
+          "name": "Tunbridge Wells",
+          "code": "E07000116",
+          "earnings": 30798.0
+        }
+      ]
+    },
+    {
+      "name": "Oxfordshire",
+      "code": "E10000025",
+      "earnings": 33183.0,
+      "sub_regions": [
+        {
+          "name": "Cherwell",
+          "code": "E07000177",
+          "earnings": 29835.0
+        },
+        {
+          "name": "Oxford",
+          "code": "E07000178",
+          "earnings": 33966.0
+        },
+        {
+          "name": "South Oxfordshire",
+          "code": "E07000179",
+          "earnings": 34384.5
+        },
+        {
+          "name": "Vale of White Horse",
+          "code": "E07000180",
+          "earnings": 35158.5
+        },
+        {
+          "name": "West Oxfordshire",
+          "code": "E07000181",
+          "earnings": 29925.0
+        }
+      ]
+    },
+    {
+      "name": "Surrey",
+      "code": "E10000030",
+      "earnings": 33885.0,
+      "sub_regions": [
+        {
+          "name": "Elmbridge",
+          "code": "E07000207",
+          "earnings": 34560.0
+        },
+        {
+          "name": "Epsom and Ewell",
+          "code": "E07000208",
+          "earnings": 28386.0
+        },
+        {
+          "name": "Guildford",
+          "code": "E07000209",
+          "earnings": 37989.0
+        },
+        {
+          "name": "Mole Valley",
+          "code": "E07000210",
+          "earnings": 39501.0
+        },
+        {
+          "name": "Reigate and Banstead",
+          "code": "E07000211",
+          "earnings": 31725.0
+        },
+        {
+          "name": "Runnymede",
+          "code": "E07000212",
+          "earnings": 36585.0
+        },
+        {
+          "name": "Spelthorne",
+          "code": "E07000213",
+          "earnings": 32224.5
+        },
+        {
+          "name": "Surrey Heath",
+          "code": "E07000214",
+          "earnings": 32310.0
+        },
+        {
+          "name": "Tandridge",
+          "code": "E07000215",
+          "earnings": 32719.5
+        },
+        {
+          "name": "Waverley",
+          "code": "E07000216",
+          "earnings": 31779.0
+        },
+        {
+          "name": "Woking",
+          "code": "E07000217",
+          "earnings": 33579.0
+        }
+      ]
+    },
+    {
+      "name": "West Sussex",
+      "code": "E10000032",
+      "earnings": 29457.0,
+      "sub_regions": [
+        {
+          "name": "Adur",
+          "code": "E07000223",
+          "earnings": 26811.0
+        },
+        {
+          "name": "Arun",
+          "code": "E07000224",
+          "earnings": 25749.0
+        },
+        {
+          "name": "Chichester",
+          "code": "E07000225",
+          "earnings": 27279.0
+        },
+        {
+          "name": "Crawley",
+          "code": "E07000226",
+          "earnings": 33363.0
+        },
+        {
+          "name": "Horsham",
+          "code": "E07000227",
+          "earnings": 29403.0
+        },
+        {
+          "name": "Mid Sussex",
+          "code": "E07000228",
+          "earnings": 31477.5
+        },
+        {
+          "name": "Worthing",
+          "code": "E07000229",
+          "earnings": 28602.0
+        }
+      ]
+    },
+    {
+      "name": "South West",
+      "code": "E12000009",
+      "earnings": 29277.0
+    },
+    {
+      "name": "Bath and North East Somerset UA",
+      "code": "E06000022",
+      "earnings": 30492.0
+    },
+    {
+      "name": "Bournemouth, Christchurch and Poole UA",
+      "code": "E06000058",
+      "earnings": 29781.0
+    },
+    {
+      "name": "Bristol, City of UA",
+      "code": "E06000023",
+      "earnings": 31909.5
+    },
+    {
+      "name": "Dorset UA",
+      "code": "E06000059",
+      "earnings": 27724.5
+    },
+    {
+      "name": "North Somerset UA",
+      "code": "E06000024",
+      "earnings": 27783.0
+    },
+    {
+      "name": "Plymouth UA",
+      "code": "E06000026",
+      "earnings": 29574.0
+    },
+    {
+      "name": "South Gloucestershire UA",
+      "code": "E06000025",
+      "earnings": 34789.5
+    },
+    {
+      "name": "Swindon UA",
+      "code": "E06000030",
+      "earnings": 31081.5
+    },
+    {
+      "name": "Torbay UA",
+      "code": "E06000027",
+      "earnings": 24448.5
+    },
+    {
+      "name": "Cornwall UA",
+      "code": "E06000052",
+      "earnings": 27684.0
+    },
+    {
+      "name": "Isles of Scilly",
+      "code": "E06000053",
+      "earnings": null
+    },
+    {
+      "name": "Wiltshire UA",
+      "code": "E06000054",
+      "earnings": 29070.0
+    },
+    {
+      "name": "Devon",
+      "code": "E10000008",
+      "earnings": 27247.5,
+      "sub_regions": [
+        {
+          "name": "East Devon",
+          "code": "E07000040",
+          "earnings": 30235.5
+        },
+        {
+          "name": "Exeter",
+          "code": "E07000041",
+          "earnings": 29097.0
+        },
+        {
+          "name": "Mid Devon",
+          "code": "E07000042",
+          "earnings": 26689.5
+        },
+        {
+          "name": "North Devon",
+          "code": "E07000043",
+          "earnings": 26365.5
+        },
+        {
+          "name": "South Hams",
+          "code": "E07000044",
+          "earnings": 26793.0
+        },
+        {
+          "name": "Teignbridge",
+          "code": "E07000045",
+          "earnings": 25947.0
+        },
+        {
+          "name": "Torridge",
+          "code": "E07000046",
+          "earnings": 25852.5
+        },
+        {
+          "name": "West Devon",
+          "code": "E07000047",
+          "earnings": 25965.0
+        }
+      ]
+    },
+    {
+      "name": "Gloucestershire",
+      "code": "E10000013",
+      "earnings": 28975.5,
+      "sub_regions": [
+        {
+          "name": "Cheltenham",
+          "code": "E07000078",
+          "earnings": 31360.5
+        },
+        {
+          "name": "Cotswold",
+          "code": "E07000079",
+          "earnings": 25159.5
+        },
+        {
+          "name": "Forest of Dean",
+          "code": "E07000080",
+          "earnings": 25978.5
+        },
+        {
+          "name": "Gloucester",
+          "code": "E07000081",
+          "earnings": 29214.0
+        },
+        {
+          "name": "Stroud",
+          "code": "E07000082",
+          "earnings": 29097.0
+        },
+        {
+          "name": "Tewkesbury",
+          "code": "E07000083",
+          "earnings": 30204.0
+        }
+      ]
+    },
+    {
+      "name": "Somerset UA",
+      "code": "E06000066",
+      "earnings": 28035.0
+    },
+    {
+      "name": "Wales",
+      "code": "W92000004",
+      "earnings": 28516.5
+    },
+    {
+      "name": "Isle of Anglesey / Ynys Môn",
+      "code": "W06000001",
+      "earnings": 30073.5
+    },
+    {
+      "name": "Gwynedd / Gwynedd",
+      "code": "W06000002",
+      "earnings": 26392.5
+    },
+    {
+      "name": "Conwy / Conwy",
+      "code": "W06000003",
+      "earnings": 26730.0
+    },
+    {
+      "name": "Denbighshire / Sir Ddinbych",
+      "code": "W06000004",
+      "earnings": 26892.0
+    },
+    {
+      "name": "Flintshire / Sir y Fflint",
+      "code": "W06000005",
+      "earnings": 29236.5
+    },
+    {
+      "name": "Wrexham / Wrecsam",
+      "code": "W06000006",
+      "earnings": 28381.5
+    },
+    {
+      "name": "Powys / Powys",
+      "code": "W06000023",
+      "earnings": 26743.5
+    },
+    {
+      "name": "Ceredigion / Ceredigion",
+      "code": "W06000008",
+      "earnings": 25843.5
+    },
+    {
+      "name": "Pembrokeshire / Sir Benfro",
+      "code": "W06000009",
+      "earnings": 28831.5
+    },
+    {
+      "name": "Carmarthenshire / Sir Gaerfyrddin",
+      "code": "W06000010",
+      "earnings": 29497.5
+    },
+    {
+      "name": "Swansea / Abertawe",
+      "code": "W06000011",
+      "earnings": 27891.0
+    },
+    {
+      "name": "Neath Port Talbot / Castell-nedd Port Talbot",
+      "code": "W06000012",
+      "earnings": 30199.5
+    },
+    {
+      "name": "Bridgend / Pen-y-bont ar Ogwr",
+      "code": "W06000013",
+      "earnings": 27508.5
+    },
+    {
+      "name": "Vale of Glamorgan / Bro Morgannwg",
+      "code": "W06000014",
+      "earnings": 24916.5
+    },
+    {
+      "name": "Cardiff / Caerdydd",
+      "code": "W06000015",
+      "earnings": 30438.0
+    },
+    {
+      "name": "Rhondda Cynon Taf / Rhondda Cynon Taf",
+      "code": "W06000016",
+      "earnings": 27621.0
+    },
+    {
+      "name": "Merthyr Tydfil / Merthyr Tudful",
+      "code": "W06000024",
+      "earnings": 24372.0
+    },
+    {
+      "name": "Caerphilly / Caerffili",
+      "code": "W06000018",
+      "earnings": 29169.0
+    },
+    {
+      "name": "Blaenau Gwent / Blaenau Gwent",
+      "code": "W06000019",
+      "earnings": 27040.5
+    },
+    {
+      "name": "Torfaen / Torfaen",
+      "code": "W06000020",
+      "earnings": 29659.5
+    },
+    {
+      "name": "Monmouthshire / Sir Fynwy",
+      "code": "W06000021",
+      "earnings": 32116.5
+    },
+    {
+      "name": "Newport / Casnewydd",
+      "code": "W06000022",
+      "earnings": 29394.0
+    },
+    {
+      "name": "Scotland",
+      "code": "S92000003",
+      "earnings": 31626.0
+    },
+    {
+      "name": "Aberdeen City",
+      "code": "S12000033",
+      "earnings": 35100.0
+    },
+    {
+      "name": "Aberdeenshire",
+      "code": "S12000034",
+      "earnings": 30366.0
+    },
+    {
+      "name": "Angus",
+      "code": "S12000041",
+      "earnings": 30703.5
+    },
+    {
+      "name": "Argyll and Bute",
+      "code": "S12000035",
+      "earnings": 29601.0
+    },
+    {
+      "name": "Clackmannanshire",
+      "code": "S12000005",
+      "earnings": 28404.0
+    },
+    {
+      "name": "Dumfries and Galloway",
+      "code": "S12000006",
+      "earnings": 26136.0
+    },
+    {
+      "name": "Dundee City",
+      "code": "S12000042",
+      "earnings": 30627.0
+    },
+    {
+      "name": "East Ayrshire",
+      "code": "S12000008",
+      "earnings": 29529.0
+    },
+    {
+      "name": "East Dunbartonshire",
+      "code": "S12000045",
+      "earnings": 27396.0
+    },
+    {
+      "name": "East Lothian",
+      "code": "S12000010",
+      "earnings": 29520.0
+    },
+    {
+      "name": "East Renfrewshire",
+      "code": "S12000011",
+      "earnings": 28615.5
+    },
+    {
+      "name": "City of Edinburgh",
+      "code": "S12000036",
+      "earnings": 33588.0
+    },
+    {
+      "name": "Falkirk",
+      "code": "S12000014",
+      "earnings": 32791.5
+    },
+    {
+      "name": "Fife",
+      "code": "S12000047",
+      "earnings": 28026.0
+    },
+    {
+      "name": "Glasgow City",
+      "code": "S12000049",
+      "earnings": 33745.5
+    },
+    {
+      "name": "Highland",
+      "code": "S12000017",
+      "earnings": 29898.0
+    },
+    {
+      "name": "Inverclyde",
+      "code": "S12000018",
+      "earnings": 28723.5
+    },
+    {
+      "name": "Midlothian",
+      "code": "S12000019",
+      "earnings": 28440.0
+    },
+    {
+      "name": "Moray",
+      "code": "S12000020",
+      "earnings": 29124.0
+    },
+    {
+      "name": "Na h-Eileanan Siar",
+      "code": "S12000013",
+      "earnings": 30199.5
+    },
+    {
+      "name": "North Ayrshire",
+      "code": "S12000021",
+      "earnings": 32107.5
+    },
+    {
+      "name": "North Lanarkshire",
+      "code": "S12000050",
+      "earnings": 31657.5
+    },
+    {
+      "name": "Orkney Islands",
+      "code": "S12000023",
+      "earnings": 34672.5
+    },
+    {
+      "name": "Perth and Kinross",
+      "code": "S12000048",
+      "earnings": 30235.5
+    },
+    {
+      "name": "Renfrewshire",
+      "code": "S12000038",
+      "earnings": 29056.5
+    },
+    {
+      "name": "Scottish Borders",
+      "code": "S12000026",
+      "earnings": 29344.5
+    },
+    {
+      "name": "Shetland Islands",
+      "code": "S12000027",
+      "earnings": 38664.0
+    },
+    {
+      "name": "South Ayrshire",
+      "code": "S12000028",
+      "earnings": 33345.0
+    },
+    {
+      "name": "South Lanarkshire",
+      "code": "S12000029",
+      "earnings": 32494.5
+    },
+    {
+      "name": "Stirling",
+      "code": "S12000030",
+      "earnings": 30064.5
+    },
+    {
+      "name": "West Dunbartonshire",
+      "code": "S12000039",
+      "earnings": 29371.5
+    },
+    {
+      "name": "West Lothian",
+      "code": "S12000040",
+      "earnings": 30582.0
+    },
+    {
+      "name": "Northern Ireland",
+      "code": "N92000002",
+      "earnings": 28854.0
+    }
+  ]
+}
