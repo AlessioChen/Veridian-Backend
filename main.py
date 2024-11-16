@@ -16,10 +16,10 @@ MAX_FILE_SIZE = 25 * 1024 * 1024  # 25MB
 parent_directory = os.path.dirname(os.getcwd())
 AUDIO_DIR = f"{parent_directory}/audio-files"
 
-origins = ["http://localhost:3000", "http://127.0.0.1:8000"]
+origins = ["http://localhost:3000", "http://127.0.0.1:8000", "http://localhost:8000", "http://127.0.0.1:5500", "http://localhost:5500"]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -27,33 +27,19 @@ app.add_middleware(
 
 @app.post("/chat")
 async def chat(request: ChatRequest):
-    user_id = "default_user"
+    print(f"Chat endpoint received request: {request.message}")
     
     async def generate_response():
+        print("Starting response generation in endpoint")
         try:
-            response_started = False
-            async for token in llm_service.generate_response(user_id, request.message):
-                if token:
-                    print(f"API sending token: {token}")  # Debug log
-                    message = {
-                        "type": "message",
-                        "content": token
-                    }
-                    encoded_message = f"data: {json.dumps(message)}\n\n".encode('utf-8')
-                    print(f"Encoded message: {encoded_message}")  # Debug log
-                    yield encoded_message
-                    response_started = True
-            
-            if response_started:
-                yield f"data: {json.dumps({'type': 'done'})}\n\n".encode('utf-8')
-            
+            async for chunk in llm_service.generate_response("default_user", request.message):
+                content = chunk.get('content', '')
+                if content:
+                    # Format as SSE
+                    yield f"data: {json.dumps({'content': content})}\n\n"
         except Exception as e:
-            print(f"Error in API: {str(e)}")  # Debug log
-            error_message = {
-                "type": "error",
-                "content": str(e)
-            }
-            yield f"data: {json.dumps(error_message)}\n\n".encode('utf-8')
+            print(f"Error in endpoint generate_response: {str(e)}")
+            raise
     
     return StreamingResponse(
         generate_response(),
@@ -61,8 +47,6 @@ async def chat(request: ChatRequest):
         headers={
             "Cache-Control": "no-cache",
             "Connection": "keep-alive",
-            "Content-Type": "text/event-stream",
-            "X-Accel-Buffering": "no"
         }
     )
 

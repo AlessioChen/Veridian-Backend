@@ -73,7 +73,10 @@ class LLMService:
         last_message = cast(HumanMessage, messages[-1])
         
         chain = self.router_prompt | self.router_llm
-        result = await chain.ainvoke({"message": last_message.content})
+        # Add debug logging for router payload
+        router_payload = {"message": last_message.content}
+        print(f"Router API Payload: {router_payload}")  # Debug
+        result = await chain.ainvoke(router_payload)
         print(f"Routed to: {result.content}")  # Debug
         
         try:
@@ -85,7 +88,7 @@ class LLMService:
         return state
 
     async def generate_agent_response(self, state: ChatState) -> AsyncGenerator[ChatState, None]:
-        print("Generating agent response")  # Debug
+        print("Generating agent response")
         messages = state["messages"]
         last_message = cast(HumanMessage, messages[-1])
         agent_type = state["agent_type"]
@@ -93,19 +96,21 @@ class LLMService:
         prompt = self.agent_prompts[agent_type]
         chain = prompt | self.agent_llm
         
-        # Use astream instead of ainvoke
-        async for chunk in chain.astream({
+        agent_payload = {
             "message": last_message.content,
             "messages": messages[:-1]
-        }):
-            print(f"Streaming chunk: {chunk.content}")  # Debug
+        }
+        
+        new_state = ChatState(
+            messages=state["messages"].copy(),
+            agent_type=state["agent_type"]
+        )
+        
+        async for chunk in chain.astream(agent_payload):
             if chunk.content:
-                # Create a new state for each chunk
-                new_state = ChatState(
-                    messages=state["messages"],
-                    agent_type=state["agent_type"]
-                )
-                new_state["messages"].append(AIMessage(content=chunk.content))
+                print(f"Agent generating chunk: {chunk.content}")
+                # Yield each chunk immediately
+                new_state["messages"] = messages + [AIMessage(content=chunk.content)]
                 yield new_state
 
     def _create_graph(self) -> StateGraph:
@@ -120,29 +125,31 @@ class LLMService:
         
         return workflow.compile()
 
-    async def generate_response(self, user_id: str, message: str) -> AsyncGenerator[str, None]:
+    async def generate_response(self, user_id: str, message: str) -> AsyncGenerator[Dict[str, Any], None]:
         try:
-            print(f"Starting response generation for message: {message}")  # Debug
+            print(f"Starting response generation for message: {message}")
             state = ChatState(
                 messages=[HumanMessage(content=message)],
                 agent_type=""
             )
             
-            previous_content = ""
-            async for step in self.workflow.astream(state, stream_mode="node"):
-                print(f"Received step: {step}")  # Debug
-                if isinstance(step, dict) and "messages" in step:
-                    messages = step["messages"]
-                    if messages and isinstance(messages[-1], AIMessage):
-                        current_content = messages[-1].content
-                        if current_content and current_content != previous_content:
-                            # Instead of calculating the difference, just yield the chunk directly
-                            new_content = current_content[len(previous_content):]
-                            if new_content.strip():  # Only yield non-empty chunks
-                                print(f"Yielding new content: {new_content}")  # Debug
-                                yield new_content
-                                previous_content = current_content
-                
+            first = True
+            async for msg, metadata in self.workflow.astream(state, stream_mode="messages"):
+                if msg.content and not isinstance(msg, HumanMessage):
+                    yield {"content": msg.content}
+                    print(f"Yielding content chunk: {msg.content}")
+
+                if isinstance(msg, AIMessageChunk):
+                    if first:
+                        gathered = msg
+                        first = False
+                    else:
+                        gathered = gathered + msg
+
+                    # Handle any tool calls if present
+                    if msg.tool_call_chunks:
+                        print(f"Tool calls: {gathered.tool_calls}")
+
         except Exception as e:
             print(f"Error in generate_response: {str(e)}")
-            raise HTTPException(status_code=500, detail=str(e)) 
+            raise HTTPException(status_code=500, detail=str(e))
