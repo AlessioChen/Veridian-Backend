@@ -1,20 +1,12 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException, Form
-from fastapi.responses import JSONResponse, StreamingResponse
-from fastapi.middleware.cors import CORSMiddleware 
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
+from llm_service import LLMService, ChatRequest
 import os
-from groq_services import GroqServices
-from career_service import CareerAdviceRequest, get_career_advice
-from general_service import GeneralRequest, get_general_response
-from agent_router import Router, RouterRequest
-from pydantic import BaseModel
-from pathlib import Path
-
-
-parent_directory = os.path.dirname(os.getcwd())
-AUDIO_DIR = f"{parent_directory}/audio-files"
+import json
 
 app = FastAPI()
-router = Router()
+llm_service = LLMService()
 
 # Configuration
 MAX_FILE_SIZE = 25 * 1024 * 1024  # 25MB
@@ -29,71 +21,43 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-
-class ChatRequest(BaseModel):
-    message: str
-
 @app.post("/chat")
 async def chat(request: ChatRequest):
-    # Create router request from chat request
-    router_request = RouterRequest(message=request.message)
+    user_id = "default_user"
     
-    # Route the request to the appropriate agent
-    agent_type, reason = router.route(router_request)
-    
-    # Then, get response from the appropriate agent
-    if agent_type == "career_agent":
-        career_request = CareerAdviceRequest(prompt=request.message)
-        return StreamingResponse(
-            get_career_advice(career_request),
-            media_type="text/event-stream"
-        )
-    else:  # Default to general agent
-        general_request = GeneralRequest(prompt=request.message)
-        return StreamingResponse(
-            get_general_response(general_request),
-            media_type="text/event-stream"
-        )
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
-
-
-@app.post("/transcript/")
-async def upload_audio(file: UploadFile = File(...)):
-    SAVE_DIR = Path("uploaded_audio")
-    SAVE_DIR.mkdir(exist_ok=True) 
-   
- 
-
-    try:
-        if not file:
-            return JSONResponse(
-                status_code=400,
-                content={"error": "No file uploaded"}
-            )
-
-        
-        file_path = SAVE_DIR / file.filename
-        with file_path.open("wb") as audio_file:
-            audio_file.write(await file.read())  
-
-        
-        filename = os.path.dirname(__file__) + f"/{file_path}"
-        transcription =  GroqServices.speech_to_text(filename)
-        os.remove(filename)
-
-
-        return JSONResponse(
-            status_code=200,
-            content={
-                "transcription": transcription,
+    async def generate_response():
+        try:
+            response_started = False
+            async for token in llm_service.generate_response(user_id, request.message):
+                if token:
+                    print(f"API sending token: {token}")  # Debug log
+                    message = {
+                        "type": "message",
+                        "content": token
+                    }
+                    encoded_message = f"data: {json.dumps(message)}\n\n".encode('utf-8')
+                    print(f"Encoded message: {encoded_message}")  # Debug log
+                    yield encoded_message
+                    response_started = True
+            
+            if response_started:
+                yield f"data: {json.dumps({'type': 'done'})}\n\n".encode('utf-8')
+            
+        except Exception as e:
+            print(f"Error in API: {str(e)}")  # Debug log
+            error_message = {
+                "type": "error",
+                "content": str(e)
             }
-        )
+            yield f"data: {json.dumps(error_message)}\n\n".encode('utf-8')
     
-    except Exception as e:
-        return JSONResponse(
-            status_code=500,
-            content={"error": f"An error occurred: {str(e)}"}
-        )
+    return StreamingResponse(
+        generate_response(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "Content-Type": "text/event-stream",
+            "X-Accel-Buffering": "no"
+        }
+    )

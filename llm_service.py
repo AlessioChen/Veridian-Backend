@@ -129,18 +129,20 @@ class LLMService:
             )
             
             previous_content = ""
-            async for step in self.workflow.astream(state, stream_mode="node"):  # Add stream_mode="node"
+            async for step in self.workflow.astream(state, stream_mode="node"):
                 print(f"Received step: {step}")  # Debug
                 if isinstance(step, dict) and "messages" in step:
                     messages = step["messages"]
                     if messages and isinstance(messages[-1], AIMessage):
                         current_content = messages[-1].content
-                        if current_content != previous_content:
+                        if current_content and current_content != previous_content:
+                            # Instead of calculating the difference, just yield the chunk directly
                             new_content = current_content[len(previous_content):]
-                            print(f"Yielding new content: {new_content}")  # Debug
-                            yield new_content
-                            previous_content = current_content
-                    
+                            if new_content.strip():  # Only yield non-empty chunks
+                                print(f"Yielding new content: {new_content}")  # Debug
+                                yield new_content
+                                previous_content = current_content
+                
         except Exception as e:
             print(f"Error in generate_response: {str(e)}")
             raise HTTPException(status_code=500, detail=str(e)) 
