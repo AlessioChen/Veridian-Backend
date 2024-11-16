@@ -1,0 +1,1649 @@
+{
+  "occupations": [
+    {
+      "description": "Chief executives and senior officials",
+      "code": "1111",
+      "median": 84131.0
+    },
+    {
+      "description": "Production managers and directors in manufacturing",
+      "code": "1121",
+      "median": 51469.0
+    },
+    {
+      "description": "Production managers and directors in construction",
+      "code": "1122",
+      "median": 50095.0
+    },
+    {
+      "description": "Production managers and directors in mining and energy",
+      "code": "1123",
+      "median": 51642.0
+    },
+    {
+      "description": "Financial managers and directors",
+      "code": "1131",
+      "median": 70000.0
+    },
+    {
+      "description": "Marketing, sales and advertising directors",
+      "code": "1132",
+      "median": 83015.0
+    },
+    {
+      "description": "Public relations and communications directors",
+      "code": "1133",
+      "median": 79886.0
+    },
+    {
+      "description": "Purchasing managers and directors",
+      "code": "1134",
+      "median": 50315.0
+    },
+    {
+      "description": "Charitable organisation managers and directors",
+      "code": "1135",
+      "median": 40921.0
+    },
+    {
+      "description": "Human resource managers and directors",
+      "code": "1136",
+      "median": 49409.0
+    },
+    {
+      "description": "Information technology directors",
+      "code": "1137",
+      "median": 80000.0
+    },
+    {
+      "description": "Functional managers and directors n.e.c.",
+      "code": "1139",
+      "median": 69933.0
+    },
+    {
+      "description": "Directors in logistics, warehousing and transport",
+      "code": "1140",
+      "median": 72177.0
+    },
+    {
+      "description": "Managers and directors in retail and wholesale",
+      "code": "1150",
+      "median": 33121.0
+    },
+    {
+      "description": "Senior police officers",
+      "code": "1162",
+      "median": 59053.0
+    },
+    {
+      "description": "Social services managers and directors",
+      "code": "1172",
+      "median": 41002.0
+    },
+    {
+      "description": "Managers and proprietors in agriculture and horticulture",
+      "code": "1211",
+      "median": 35997.0
+    },
+    {
+      "description": "Managers and proprietors in forestry, fishing and related services",
+      "code": "1212",
+      "median": 29463.0
+    },
+    {
+      "description": "Hotel and accommodation managers and proprietors",
+      "code": "1221",
+      "median": 32701.0
+    },
+    {
+      "description": "Restaurant and catering establishment managers and proprietors",
+      "code": "1222",
+      "median": 30717.0
+    },
+    {
+      "description": "Publicans and managers of licensed premises",
+      "code": "1223",
+      "median": 33477.0
+    },
+    {
+      "description": "Leisure and sports managers",
+      "code": "1224",
+      "median": 33134.0
+    },
+    {
+      "description": "Health care practice managers",
+      "code": "1231",
+      "median": 42958.0
+    },
+    {
+      "description": "Managers in transport and distribution",
+      "code": "1241",
+      "median": 41465.0
+    },
+    {
+      "description": "Managers in storage and warehousing",
+      "code": "1242",
+      "median": 32040.0
+    },
+    {
+      "description": "Managers in logistics",
+      "code": "1243",
+      "median": 42368.0
+    },
+    {
+      "description": "Property, housing and estate managers",
+      "code": "1251",
+      "median": 38352.0
+    },
+    {
+      "description": "Waste disposal and environmental services managers",
+      "code": "1254",
+      "median": 48825.0
+    },
+    {
+      "description": "Managers and directors in the creative industries",
+      "code": "1255",
+      "median": 41953.0
+    },
+    {
+      "description": "Managers and proprietors in other services n.e.c.",
+      "code": "1259",
+      "median": 34411.0
+    },
+    {
+      "description": "Chemical scientists",
+      "code": "2111",
+      "median": 35186.0
+    },
+    {
+      "description": "Biochemists and biomedical scientists",
+      "code": "2113",
+      "median": 44797.0
+    },
+    {
+      "description": "Physical scientists",
+      "code": "2114",
+      "median": 47289.0
+    },
+    {
+      "description": "Social and humanities scientists",
+      "code": "2115",
+      "median": 36447.0
+    },
+    {
+      "description": "Natural and social science professionals n.e.c.",
+      "code": "2119",
+      "median": 41175.0
+    },
+    {
+      "description": "Civil engineers",
+      "code": "2121",
+      "median": 45524.0
+    },
+    {
+      "description": "Mechanical engineers",
+      "code": "2122",
+      "median": 42463.0
+    },
+    {
+      "description": "Electrical engineers",
+      "code": "2123",
+      "median": 53488.0
+    },
+    {
+      "description": "Electronics engineers",
+      "code": "2124",
+      "median": 49882.0
+    },
+    {
+      "description": "Production and process engineers",
+      "code": "2125",
+      "median": 43669.0
+    },
+    {
+      "description": "Aerospace engineers",
+      "code": "2126",
+      "median": 46419.0
+    },
+    {
+      "description": "Engineering project managers and project engineers",
+      "code": "2127",
+      "median": 48845.0
+    },
+    {
+      "description": "Engineering professionals n.e.c.",
+      "code": "2129",
+      "median": 42939.0
+    },
+    {
+      "description": "IT project managers",
+      "code": "2131",
+      "median": 51933.0
+    },
+    {
+      "description": "IT managers",
+      "code": "2132",
+      "median": 50880.0
+    },
+    {
+      "description": "IT business analysts, architects and systems designers",
+      "code": "2133",
+      "median": 51698.0
+    },
+    {
+      "description": "Programmers and software development professionals",
+      "code": "2134",
+      "median": 49430.0
+    },
+    {
+      "description": "Cyber security professionals",
+      "code": "2135",
+      "median": 45294.0
+    },
+    {
+      "description": "IT quality and testing professionals",
+      "code": "2136",
+      "median": 39914.0
+    },
+    {
+      "description": "IT network professionals",
+      "code": "2137",
+      "median": 42841.0
+    },
+    {
+      "description": "Information technology professionals n.e.c.",
+      "code": "2139",
+      "median": 44244.0
+    },
+    {
+      "description": "Web design professionals",
+      "code": "2141",
+      "median": 41288.0
+    },
+    {
+      "description": "Graphic and multimedia designers",
+      "code": "2142",
+      "median": 29104.0
+    },
+    {
+      "description": "Conservation professionals",
+      "code": "2151",
+      "median": 36635.0
+    },
+    {
+      "description": "Environment professionals",
+      "code": "2152",
+      "median": 36115.0
+    },
+    {
+      "description": "Research and development (R&D) managers",
+      "code": "2161",
+      "median": 49219.0
+    },
+    {
+      "description": "Other researchers, unspecified discipline",
+      "code": "2162",
+      "median": 40810.0
+    },
+    {
+      "description": "Generalist medical practitioners",
+      "code": "2211",
+      "median": 41296.0
+    },
+    {
+      "description": "Specialist medical practitioners",
+      "code": "2212",
+      "median": 66031.0
+    },
+    {
+      "description": "Physiotherapists",
+      "code": "2221",
+      "median": 40888.0
+    },
+    {
+      "description": "Occupational therapists",
+      "code": "2222",
+      "median": 37423.0
+    },
+    {
+      "description": "Speech and language therapists",
+      "code": "2223",
+      "median": 35963.0
+    },
+    {
+      "description": "Clinical psychologists",
+      "code": "2225",
+      "median": 36315.0
+    },
+    {
+      "description": "Other psychologists",
+      "code": "2226",
+      "median": 35311.0
+    },
+    {
+      "description": "Therapy professionals n.e.c.",
+      "code": "2229",
+      "median": 34448.0
+    },
+    {
+      "description": "Midwifery nurses",
+      "code": "2231",
+      "median": 41423.0
+    },
+    {
+      "description": "Community nurses",
+      "code": "2232",
+      "median": 38129.0
+    },
+    {
+      "description": "Specialist nurses",
+      "code": "2233",
+      "median": 42136.0
+    },
+    {
+      "description": "Nurse practitioners",
+      "code": "2234",
+      "median": 41523.0
+    },
+    {
+      "description": "Mental health nurses",
+      "code": "2235",
+      "median": 44237.0
+    },
+    {
+      "description": "Children's nurses",
+      "code": "2236",
+      "median": 34024.0
+    },
+    {
+      "description": "Other nursing professionals",
+      "code": "2237",
+      "median": 37960.0
+    },
+    {
+      "description": "Veterinarians",
+      "code": "2240",
+      "median": 48062.0
+    },
+    {
+      "description": "Pharmacists",
+      "code": "2251",
+      "median": 46139.0
+    },
+    {
+      "description": "Medical radiographers",
+      "code": "2254",
+      "median": 44296.0
+    },
+    {
+      "description": "Paramedics",
+      "code": "2255",
+      "median": 48688.0
+    },
+    {
+      "description": "Other health professionals n.e.c.",
+      "code": "2259",
+      "median": 40565.0
+    },
+    {
+      "description": "Higher education teaching professionals",
+      "code": "2311",
+      "median": 47726.0
+    },
+    {
+      "description": "Further education teaching professionals",
+      "code": "2312",
+      "median": 40738.0
+    },
+    {
+      "description": "Secondary education teaching professionals",
+      "code": "2313",
+      "median": 42818.0
+    },
+    {
+      "description": "Primary education teaching professionals",
+      "code": "2314",
+      "median": 40059.0
+    },
+    {
+      "description": "Nursery education teaching professionals",
+      "code": "2315",
+      "median": 31648.0
+    },
+    {
+      "description": "Special needs education teaching professionals",
+      "code": "2316",
+      "median": 36256.0
+    },
+    {
+      "description": "Teachers of English as a foreign language",
+      "code": "2317",
+      "median": 36562.0
+    },
+    {
+      "description": "Teaching professionals n.e.c.",
+      "code": "2319",
+      "median": 30860.0
+    },
+    {
+      "description": "Head teachers and principals",
+      "code": "2321",
+      "median": 66014.0
+    },
+    {
+      "description": "Education managers",
+      "code": "2322",
+      "median": 40722.0
+    },
+    {
+      "description": "Education advisers and school inspectors",
+      "code": "2323",
+      "median": 37486.0
+    },
+    {
+      "description": "Early education and childcare services managers",
+      "code": "2324",
+      "median": 25813.0
+    },
+    {
+      "description": "Other educational professionals n.e.c",
+      "code": "2329",
+      "median": 43050.0
+    },
+    {
+      "description": "Barristers and judges",
+      "code": "2411",
+      "median": 52416.0
+    },
+    {
+      "description": "Solicitors and lawyers",
+      "code": "2412",
+      "median": 52296.0
+    },
+    {
+      "description": "Legal professionals n.e.c.",
+      "code": "2419",
+      "median": 29571.0
+    },
+    {
+      "description": "Chartered and certified accountants",
+      "code": "2421",
+      "median": 46847.0
+    },
+    {
+      "description": "Finance and investment analysts and advisers",
+      "code": "2422",
+      "median": 40629.0
+    },
+    {
+      "description": "Taxation experts",
+      "code": "2423",
+      "median": 46272.0
+    },
+    {
+      "description": "Management consultants and business analysts",
+      "code": "2431",
+      "median": 48002.0
+    },
+    {
+      "description": "Marketing and commercial managers",
+      "code": "2432",
+      "median": 46488.0
+    },
+    {
+      "description": "Actuaries, economists and statisticians",
+      "code": "2433",
+      "median": 47985.0
+    },
+    {
+      "description": "Business and related research professionals",
+      "code": "2434",
+      "median": 36528.0
+    },
+    {
+      "description": "Business, research and administrative professionals n.e.c.",
+      "code": "2439",
+      "median": 52241.0
+    },
+    {
+      "description": "Business and financial project management professionals",
+      "code": "2440",
+      "median": 52896.0
+    },
+    {
+      "description": "Architects",
+      "code": "2451",
+      "median": 45894.0
+    },
+    {
+      "description": "Chartered architectural technologists, planning officers and consultants",
+      "code": "2452",
+      "median": 36600.0
+    },
+    {
+      "description": "Quantity surveyors",
+      "code": "2453",
+      "median": 45526.0
+    },
+    {
+      "description": "Chartered surveyors",
+      "code": "2454",
+      "median": 41555.0
+    },
+    {
+      "description": "Construction project managers and related professionals",
+      "code": "2455",
+      "median": 40501.0
+    },
+    {
+      "description": "Social workers",
+      "code": "2461",
+      "median": 40713.0
+    },
+    {
+      "description": "Clergy",
+      "code": "2463",
+      "median": 27689.0
+    },
+    {
+      "description": "Welfare professionals n.e.c.",
+      "code": "2469",
+      "median": 33426.0
+    },
+    {
+      "description": "Librarians",
+      "code": "2471",
+      "median": 31660.0
+    },
+    {
+      "description": "Archivists and curators",
+      "code": "2472",
+      "median": 33560.0
+    },
+    {
+      "description": "Quality control and planning engineers",
+      "code": "2481",
+      "median": 40000.0
+    },
+    {
+      "description": "Quality assurance and regulatory professionals",
+      "code": "2482",
+      "median": 42474.0
+    },
+    {
+      "description": "Environmental health professionals",
+      "code": "2483",
+      "median": 38873.0
+    },
+    {
+      "description": "Newspaper and periodical editors",
+      "code": "2491",
+      "median": 40371.0
+    },
+    {
+      "description": "Newspaper and periodical journalists and reporters",
+      "code": "2492",
+      "median": 40762.0
+    },
+    {
+      "description": "Public relations professionals",
+      "code": "2493",
+      "median": 35404.0
+    },
+    {
+      "description": "Laboratory technicians",
+      "code": "3111",
+      "median": 24717.0
+    },
+    {
+      "description": "Electrical and electronics technicians",
+      "code": "3112",
+      "median": 34334.0
+    },
+    {
+      "description": "Engineering technicians",
+      "code": "3113",
+      "median": 39827.0
+    },
+    {
+      "description": "Building and civil engineering technicians",
+      "code": "3114",
+      "median": 29911.0
+    },
+    {
+      "description": "Quality assurance technicians",
+      "code": "3115",
+      "median": 28634.0
+    },
+    {
+      "description": "Planning, process and production technicians",
+      "code": "3116",
+      "median": 33684.0
+    },
+    {
+      "description": "Science, engineering and production technicians n.e.c.",
+      "code": "3119",
+      "median": 32111.0
+    },
+    {
+      "description": "CAD, drawing and architectural technicians",
+      "code": "3120",
+      "median": 31194.0
+    },
+    {
+      "description": "IT operations technicians",
+      "code": "3131",
+      "median": 31141.0
+    },
+    {
+      "description": "IT user support technicians",
+      "code": "3132",
+      "median": 32354.0
+    },
+    {
+      "description": "Database administrators and web content technicians",
+      "code": "3133",
+      "median": 31500.0
+    },
+    {
+      "description": "Pharmaceutical technicians",
+      "code": "3212",
+      "median": 26840.0
+    },
+    {
+      "description": "Medical and dental technicians",
+      "code": "3213",
+      "median": 25978.0
+    },
+    {
+      "description": "Youth and community workers",
+      "code": "3221",
+      "median": 29013.0
+    },
+    {
+      "description": "Child and early years officers",
+      "code": "3222",
+      "median": 28216.0
+    },
+    {
+      "description": "Housing officers",
+      "code": "3223",
+      "median": 31378.0
+    },
+    {
+      "description": "Counsellors",
+      "code": "3224",
+      "median": 29170.0
+    },
+    {
+      "description": "Welfare and housing associate professionals n.e.c.",
+      "code": "3229",
+      "median": 26554.0
+    },
+    {
+      "description": "Higher level teaching assistants",
+      "code": "3231",
+      "median": 22283.0
+    },
+    {
+      "description": "Early education and childcare practitioners",
+      "code": "3232",
+      "median": 20340.0
+    },
+    {
+      "description": "Veterinary nurses",
+      "code": "3240",
+      "median": 24370.0
+    },
+    {
+      "description": "Police officers (sergeant and below)",
+      "code": "3312",
+      "median": 44830.0
+    },
+    {
+      "description": "Fire service officers (watch manager and below)",
+      "code": "3313",
+      "median": 39477.0
+    },
+    {
+      "description": "Prison service officers (below principal officer)",
+      "code": "3314",
+      "median": 30291.0
+    },
+    {
+      "description": "Protective service associate professionals n.e.c.",
+      "code": "3319",
+      "median": 39193.0
+    },
+    {
+      "description": "Authors, writers and translators",
+      "code": "3412",
+      "median": 33780.0
+    },
+    {
+      "description": "Arts officers, producers and directors",
+      "code": "3416",
+      "median": 37485.0
+    },
+    {
+      "description": "Photographers, audio-visual and broadcasting equipment operators",
+      "code": "3417",
+      "median": 29046.0
+    },
+    {
+      "description": "Interior designers",
+      "code": "3421",
+      "median": 33274.0
+    },
+    {
+      "description": "Clothing, fashion and accessories designers",
+      "code": "3422",
+      "median": 40503.0
+    },
+    {
+      "description": "Sports coaches, instructors and officials",
+      "code": "3432",
+      "median": 23206.0
+    },
+    {
+      "description": "Aircraft pilots and air traffic controllers",
+      "code": "3511",
+      "median": 71676.0
+    },
+    {
+      "description": "Legal associate professionals",
+      "code": "3520",
+      "median": 29965.0
+    },
+    {
+      "description": "Insurance underwriters",
+      "code": "3532",
+      "median": 35248.0
+    },
+    {
+      "description": "Financial and accounting technicians",
+      "code": "3533",
+      "median": 47728.0
+    },
+    {
+      "description": "Financial accounts managers",
+      "code": "3534",
+      "median": 41622.0
+    },
+    {
+      "description": "Estimators, valuers and assessors",
+      "code": "3541",
+      "median": 34941.0
+    },
+    {
+      "description": "Project support officers",
+      "code": "3543",
+      "median": 31988.0
+    },
+    {
+      "description": "Data analysts",
+      "code": "3544",
+      "median": 33174.0
+    },
+    {
+      "description": "Business associate professionals n.e.c.",
+      "code": "3549",
+      "median": 28346.0
+    },
+    {
+      "description": "Buyers and procurement officers",
+      "code": "3551",
+      "median": 32972.0
+    },
+    {
+      "description": "Business sales executives",
+      "code": "3552",
+      "median": 34526.0
+    },
+    {
+      "description": "Merchandisers",
+      "code": "3553",
+      "median": 26702.0
+    },
+    {
+      "description": "Marketing associate professionals",
+      "code": "3554",
+      "median": 30601.0
+    },
+    {
+      "description": "Estate agents and auctioneers",
+      "code": "3555",
+      "median": 28125.0
+    },
+    {
+      "description": "Sales accounts and business development managers",
+      "code": "3556",
+      "median": 52495.0
+    },
+    {
+      "description": "Events managers and organisers",
+      "code": "3557",
+      "median": 28479.0
+    },
+    {
+      "description": "Public services associate professionals",
+      "code": "3560",
+      "median": 38016.0
+    },
+    {
+      "description": "Human resources and industrial relations officers",
+      "code": "3571",
+      "median": 29744.0
+    },
+    {
+      "description": "Careers advisers and vocational guidance specialists",
+      "code": "3572",
+      "median": 27092.0
+    },
+    {
+      "description": "Other vocational and industrial trainers",
+      "code": "3574",
+      "median": 32001.0
+    },
+    {
+      "description": "Inspectors of standards and regulations",
+      "code": "3581",
+      "median": 35284.0
+    },
+    {
+      "description": "Health and safety managers and officers",
+      "code": "3582",
+      "median": 40879.0
+    },
+    {
+      "description": "National government administrative occupations",
+      "code": "4111",
+      "median": 28124.0
+    },
+    {
+      "description": "Local government administrative occupations",
+      "code": "4112",
+      "median": 27305.0
+    },
+    {
+      "description": "Officers of non-governmental organisations",
+      "code": "4113",
+      "median": 27416.0
+    },
+    {
+      "description": "Book-keepers, payroll managers and wages clerks",
+      "code": "4122",
+      "median": 28000.0
+    },
+    {
+      "description": "Bank and post office clerks",
+      "code": "4123",
+      "median": 24734.0
+    },
+    {
+      "description": "Finance officers",
+      "code": "4124",
+      "median": 27852.0
+    },
+    {
+      "description": "Financial administrative occupations n.e.c.",
+      "code": "4129",
+      "median": 25429.0
+    },
+    {
+      "description": "Records clerks and assistants",
+      "code": "4131",
+      "median": 25148.0
+    },
+    {
+      "description": "Pensions and insurance clerks and assistants",
+      "code": "4132",
+      "median": 25201.0
+    },
+    {
+      "description": "Stock control clerks and assistants",
+      "code": "4133",
+      "median": 26704.0
+    },
+    {
+      "description": "Transport and distribution clerks and assistants",
+      "code": "4134",
+      "median": 28080.0
+    },
+    {
+      "description": "Library clerks and assistants",
+      "code": "4135",
+      "median": 22877.0
+    },
+    {
+      "description": "Human resources administrative occupations",
+      "code": "4136",
+      "median": 23104.0
+    },
+    {
+      "description": "Office managers",
+      "code": "4141",
+      "median": 35000.0
+    },
+    {
+      "description": "Customer service managers",
+      "code": "4143",
+      "median": 33380.0
+    },
+    {
+      "description": "Sales administrators",
+      "code": "4151",
+      "median": 25509.0
+    },
+    {
+      "description": "Data entry administrators",
+      "code": "4152",
+      "median": 23069.0
+    },
+    {
+      "description": "Other administrative occupations n.e.c.",
+      "code": "4159",
+      "median": 25808.0
+    },
+    {
+      "description": "Medical secretaries",
+      "code": "4211",
+      "median": 24792.0
+    },
+    {
+      "description": "Legal secretaries",
+      "code": "4212",
+      "median": 23999.0
+    },
+    {
+      "description": "School secretaries",
+      "code": "4213",
+      "median": 22547.0
+    },
+    {
+      "description": "Personal assistants and other secretaries",
+      "code": "4215",
+      "median": 30328.0
+    },
+    {
+      "description": "Receptionists",
+      "code": "4216",
+      "median": 21692.0
+    },
+    {
+      "description": "Farmers",
+      "code": "5111",
+      "median": 29815.0
+    },
+    {
+      "description": "Agricultural and fishing trades n.e.c.",
+      "code": "5119",
+      "median": 25600.0
+    },
+    {
+      "description": "Sheet metal workers",
+      "code": "5211",
+      "median": 26017.0
+    },
+    {
+      "description": "Metal plate workers, smiths, moulders and related occupations",
+      "code": "5212",
+      "median": 31182.0
+    },
+    {
+      "description": "Welding trades",
+      "code": "5213",
+      "median": 31695.0
+    },
+    {
+      "description": "Metal machining setters and setter-operators",
+      "code": "5221",
+      "median": 32564.0
+    },
+    {
+      "description": "Tool makers, tool fitters and markers-out",
+      "code": "5222",
+      "median": 36387.0
+    },
+    {
+      "description": "Metal working production and maintenance fitters",
+      "code": "5223",
+      "median": 36350.0
+    },
+    {
+      "description": "Precision instrument makers and repairers",
+      "code": "5224",
+      "median": 29231.0
+    },
+    {
+      "description": "Air-conditioning and refrigeration installers and repairers",
+      "code": "5225",
+      "median": 39818.0
+    },
+    {
+      "description": "Vehicle technicians, mechanics and electricians",
+      "code": "5231",
+      "median": 31959.0
+    },
+    {
+      "description": "Vehicle paint technicians",
+      "code": "5233",
+      "median": 31075.0
+    },
+    {
+      "description": "Aircraft maintenance and related trades",
+      "code": "5234",
+      "median": 44506.0
+    },
+    {
+      "description": "Electricians and electrical fitters",
+      "code": "5241",
+      "median": 35494.0
+    },
+    {
+      "description": "Telecoms and related network installers and repairers",
+      "code": "5242",
+      "median": 34990.0
+    },
+    {
+      "description": "Computer system and equipment installers and servicers",
+      "code": "5244",
+      "median": 30971.0
+    },
+    {
+      "description": "Security system installers and repairers",
+      "code": "5245",
+      "median": 35796.0
+    },
+    {
+      "description": "Electrical service and maintenance mechanics and repairers",
+      "code": "5246",
+      "median": 36063.0
+    },
+    {
+      "description": "Electrical and electronic trades n.e.c.",
+      "code": "5249",
+      "median": 40386.0
+    },
+    {
+      "description": "Skilled metal, electrical and electronic trades supervisors",
+      "code": "5250",
+      "median": 38350.0
+    },
+    {
+      "description": "Steel erectors",
+      "code": "5311",
+      "median": 34797.0
+    },
+    {
+      "description": "Bricklayers",
+      "code": "5313",
+      "median": 30939.0
+    },
+    {
+      "description": "Plumbers & heating and ventilating installers and repairers",
+      "code": "5315",
+      "median": 35248.0
+    },
+    {
+      "description": "Carpenters and joiners",
+      "code": "5316",
+      "median": 29734.0
+    },
+    {
+      "description": "Glaziers, window fabricators and fitters",
+      "code": "5317",
+      "median": 26584.0
+    },
+    {
+      "description": "Construction and building trades n.e.c.",
+      "code": "5319",
+      "median": 28989.0
+    },
+    {
+      "description": "Plasterers",
+      "code": "5321",
+      "median": 32375.0
+    },
+    {
+      "description": "Floorers and wall tilers",
+      "code": "5322",
+      "median": 32557.0
+    },
+    {
+      "description": "Painters and decorators",
+      "code": "5323",
+      "median": 28570.0
+    },
+    {
+      "description": "Construction and building trades supervisors",
+      "code": "5330",
+      "median": 38070.0
+    },
+    {
+      "description": "Upholsterers",
+      "code": "5411",
+      "median": 23380.0
+    },
+    {
+      "description": "Textiles, garments and related trades n.e.c.",
+      "code": "5419",
+      "median": 23239.0
+    },
+    {
+      "description": "Printers",
+      "code": "5422",
+      "median": 28085.0
+    },
+    {
+      "description": "Print finishing and binding workers",
+      "code": "5423",
+      "median": 25718.0
+    },
+    {
+      "description": "Butchers",
+      "code": "5431",
+      "median": 26084.0
+    },
+    {
+      "description": "Bakers and flour confectioners",
+      "code": "5432",
+      "median": 21839.0
+    },
+    {
+      "description": "Chefs",
+      "code": "5434",
+      "median": 26000.0
+    },
+    {
+      "description": "Cooks",
+      "code": "5435",
+      "median": 21777.0
+    },
+    {
+      "description": "Catering and bar managers",
+      "code": "5436",
+      "median": 25901.0
+    },
+    {
+      "description": "Other skilled trades n.e.c.",
+      "code": "5449",
+      "median": 30126.0
+    },
+    {
+      "description": "Early education and childcare assistants",
+      "code": "6111",
+      "median": 21308.0
+    },
+    {
+      "description": "Teaching assistants",
+      "code": "6112",
+      "median": 19033.0
+    },
+    {
+      "description": "Educational support assistants",
+      "code": "6113",
+      "median": 19343.0
+    },
+    {
+      "description": "Animal care services occupations n.e.c.",
+      "code": "6129",
+      "median": 21933.0
+    },
+    {
+      "description": "Nursing auxiliaries and assistants",
+      "code": "6131",
+      "median": 25129.0
+    },
+    {
+      "description": "Ambulance staff (excluding paramedics)",
+      "code": "6132",
+      "median": 28301.0
+    },
+    {
+      "description": "Dental nurses",
+      "code": "6133",
+      "median": 21739.0
+    },
+    {
+      "description": "Houseparents and residential wardens",
+      "code": "6134",
+      "median": 31221.0
+    },
+    {
+      "description": "Care workers and home carers",
+      "code": "6135",
+      "median": 23409.0
+    },
+    {
+      "description": "Senior care workers",
+      "code": "6136",
+      "median": 25463.0
+    },
+    {
+      "description": "Undertakers, mortuary and crematorium assistants",
+      "code": "6138",
+      "median": 27933.0
+    },
+    {
+      "description": "Sports and leisure assistants",
+      "code": "6211",
+      "median": 22265.0
+    },
+    {
+      "description": "Travel agents",
+      "code": "6212",
+      "median": 29618.0
+    },
+    {
+      "description": "Air travel assistants",
+      "code": "6213",
+      "median": 28929.0
+    },
+    {
+      "description": "Rail travel assistants",
+      "code": "6214",
+      "median": 36080.0
+    },
+    {
+      "description": "Leisure and travel service occupations n.e.c.",
+      "code": "6219",
+      "median": 25700.0
+    },
+    {
+      "description": "Hairdressers and barbers",
+      "code": "6221",
+      "median": 19589.0
+    },
+    {
+      "description": "Beauticians and related occupations",
+      "code": "6222",
+      "median": 19026.0
+    },
+    {
+      "description": "Housekeepers and related occupations",
+      "code": "6231",
+      "median": 22964.0
+    },
+    {
+      "description": "Caretakers",
+      "code": "6232",
+      "median": 25303.0
+    },
+    {
+      "description": "Cleaning and housekeeping managers and supervisors",
+      "code": "6240",
+      "median": 24926.0
+    },
+    {
+      "description": "Police community support officers",
+      "code": "6311",
+      "median": 29779.0
+    },
+    {
+      "description": "Parking and civil enforcement occupations",
+      "code": "6312",
+      "median": 23976.0
+    },
+    {
+      "description": "Sales and retail assistants",
+      "code": "7111",
+      "median": 21530.0
+    },
+    {
+      "description": "Retail cashiers and check-out operators",
+      "code": "7112",
+      "median": 18602.0
+    },
+    {
+      "description": "Telephone salespersons",
+      "code": "7113",
+      "median": 22619.0
+    },
+    {
+      "description": "Pharmacy and optical dispensing assistants",
+      "code": "7114",
+      "median": 20870.0
+    },
+    {
+      "description": "Vehicle and parts salespersons and advisers",
+      "code": "7115",
+      "median": 26698.0
+    },
+    {
+      "description": "Debt, rent and other cash collectors",
+      "code": "7122",
+      "median": 24225.0
+    },
+    {
+      "description": "Roundspersons and van salespersons",
+      "code": "7123",
+      "median": 23935.0
+    },
+    {
+      "description": "Sales related occupations n.e.c.",
+      "code": "7129",
+      "median": 27274.0
+    },
+    {
+      "description": "Sales supervisors - retail and wholesale",
+      "code": "7132",
+      "median": 24751.0
+    },
+    {
+      "description": "Call and contact centre occupations",
+      "code": "7211",
+      "median": 23676.0
+    },
+    {
+      "description": "Telephonists",
+      "code": "7212",
+      "median": 28322.0
+    },
+    {
+      "description": "Communication operators",
+      "code": "7213",
+      "median": 29351.0
+    },
+    {
+      "description": "Customer service occupations n.e.c.",
+      "code": "7219",
+      "median": 25000.0
+    },
+    {
+      "description": "Customer service supervisors",
+      "code": "7220",
+      "median": 31827.0
+    },
+    {
+      "description": "Food, drink and tobacco process operatives",
+      "code": "8111",
+      "median": 25602.0
+    },
+    {
+      "description": "Textile process operatives",
+      "code": "8112",
+      "median": 27113.0
+    },
+    {
+      "description": "Chemical and related process operatives",
+      "code": "8113",
+      "median": 29973.0
+    },
+    {
+      "description": "Plastics process operatives",
+      "code": "8114",
+      "median": 25553.0
+    },
+    {
+      "description": "Metal making and treating process operatives",
+      "code": "8115",
+      "median": 30407.0
+    },
+    {
+      "description": "Process operatives n.e.c.",
+      "code": "8119",
+      "median": 27816.0
+    },
+    {
+      "description": "Metal working machine operatives",
+      "code": "8120",
+      "median": 30685.0
+    },
+    {
+      "description": "Energy plant operatives",
+      "code": "8133",
+      "median": 35120.0
+    },
+    {
+      "description": "Water and sewerage plant operatives",
+      "code": "8134",
+      "median": 32447.0
+    },
+    {
+      "description": "Printing machine assistants",
+      "code": "8135",
+      "median": 26000.0
+    },
+    {
+      "description": "Plant and machine operatives n.e.c.",
+      "code": "8139",
+      "median": 25000.0
+    },
+    {
+      "description": "Assemblers (electrical and electronic products)",
+      "code": "8141",
+      "median": 25089.0
+    },
+    {
+      "description": "Assemblers (vehicles and metal goods)",
+      "code": "8142",
+      "median": 33334.0
+    },
+    {
+      "description": "Routine inspectors and testers",
+      "code": "8143",
+      "median": 30065.0
+    },
+    {
+      "description": "Weighers, graders and sorters",
+      "code": "8144",
+      "median": 29576.0
+    },
+    {
+      "description": "Tyre, exhaust and windscreen fitters",
+      "code": "8145",
+      "median": 28813.0
+    },
+    {
+      "description": "Sewing machinists",
+      "code": "8146",
+      "median": 21341.0
+    },
+    {
+      "description": "Assemblers and routine operatives n.e.c.",
+      "code": "8149",
+      "median": 25215.0
+    },
+    {
+      "description": "Scaffolders, stagers and riggers",
+      "code": "8151",
+      "median": 35563.0
+    },
+    {
+      "description": "Road construction operatives",
+      "code": "8152",
+      "median": 33232.0
+    },
+    {
+      "description": "Rail construction and maintenance operatives",
+      "code": "8153",
+      "median": 37954.0
+    },
+    {
+      "description": "Construction operatives n.e.c.",
+      "code": "8159",
+      "median": 27596.0
+    },
+    {
+      "description": "Large goods vehicle drivers",
+      "code": "8211",
+      "median": 37256.0
+    },
+    {
+      "description": "Bus and coach drivers",
+      "code": "8212",
+      "median": 31038.0
+    },
+    {
+      "description": "Delivery drivers and couriers",
+      "code": "8214",
+      "median": 25208.0
+    },
+    {
+      "description": "Road transport drivers n.e.c.",
+      "code": "8219",
+      "median": 27393.0
+    },
+    {
+      "description": "Crane drivers",
+      "code": "8221",
+      "median": 42180.0
+    },
+    {
+      "description": "Fork-lift truck drivers",
+      "code": "8222",
+      "median": 27225.0
+    },
+    {
+      "description": "Mobile machine drivers and operatives n.e.c.",
+      "code": "8229",
+      "median": 30684.0
+    },
+    {
+      "description": "Train and tram drivers",
+      "code": "8231",
+      "median": 64348.0
+    },
+    {
+      "description": "Air transport operatives",
+      "code": "8233",
+      "median": 27642.0
+    },
+    {
+      "description": "Rail transport operatives",
+      "code": "8234",
+      "median": 48550.0
+    },
+    {
+      "description": "Farm workers",
+      "code": "9111",
+      "median": 26096.0
+    },
+    {
+      "description": "Fishing and other elementary agriculture occupations n.e.c.",
+      "code": "9119",
+      "median": 23593.0
+    },
+    {
+      "description": "Groundworkers",
+      "code": "9121",
+      "median": 35212.0
+    },
+    {
+      "description": "Elementary construction occupations n.e.c.",
+      "code": "9129",
+      "median": 24410.0
+    },
+    {
+      "description": "Industrial cleaning process occupations",
+      "code": "9131",
+      "median": 22630.0
+    },
+    {
+      "description": "Packers, bottlers, canners and fillers",
+      "code": "9132",
+      "median": 22952.0
+    },
+    {
+      "description": "Elementary process plant occupations n.e.c.",
+      "code": "9139",
+      "median": 25206.0
+    },
+    {
+      "description": "Postal workers, mail sorters and messengers",
+      "code": "9211",
+      "median": 28681.0
+    },
+    {
+      "description": "Elementary administration occupations n.e.c.",
+      "code": "9219",
+      "median": 21808.0
+    },
+    {
+      "description": "Street cleaners",
+      "code": "9222",
+      "median": 24131.0
+    },
+    {
+      "description": "Cleaners and domestics",
+      "code": "9223",
+      "median": 21058.0
+    },
+    {
+      "description": "Launderers, dry cleaners and pressers",
+      "code": "9224",
+      "median": 19612.0
+    },
+    {
+      "description": "Refuse and salvage occupations",
+      "code": "9225",
+      "median": 23768.0
+    },
+    {
+      "description": "Vehicle valeters and cleaners",
+      "code": "9226",
+      "median": 22796.0
+    },
+    {
+      "description": "Security guards and related occupations",
+      "code": "9231",
+      "median": 28216.0
+    },
+    {
+      "description": "Elementary storage supervisors",
+      "code": "9251",
+      "median": 27647.0
+    },
+    {
+      "description": "Warehouse operatives",
+      "code": "9252",
+      "median": 24945.0
+    },
+    {
+      "description": "Delivery operatives",
+      "code": "9253",
+      "median": 22193.0
+    },
+    {
+      "description": "Elementary storage occupations n.e.c.",
+      "code": "9259",
+      "median": 28875.0
+    },
+    {
+      "description": "Bar and catering supervisors",
+      "code": "9261",
+      "median": 21617.0
+    },
+    {
+      "description": "Kitchen and catering assistants",
+      "code": "9263",
+      "median": 20126.0
+    },
+    {
+      "description": "Waiters and waitresses",
+      "code": "9264",
+      "median": 18426.0
+    },
+    {
+      "description": "Bar staff",
+      "code": "9265",
+      "median": 18103.0
+    },
+    {
+      "description": "Coffee shop workers",
+      "code": "9266",
+      "median": 19727.0
+    },
+    {
+      "description": "Leisure and theme park attendants",
+      "code": "9267",
+      "median": 17859.0
+    },
+    {
+      "description": "Other elementary services occupations n.e.c.",
+      "code": "9269",
+      "median": 22008.0
+    }
+  ]
+}
