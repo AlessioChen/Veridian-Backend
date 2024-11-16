@@ -1,10 +1,11 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException, Form
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, StreamingResponse
 import os
 import aiohttp
 import tempfile
 from datetime import datetime
 from typing import Optional
+from career_service import CareerAdviceRequest, get_career_advice
 
 parent_directory = os.path.dirname(os.getcwd())
 AUDIO_DIR = f"{parent_directory}/audio-files"
@@ -149,3 +150,14 @@ async def process_mp3(file_data: bytes, filename: str) -> dict:
         # Clean up temporary file
         if os.path.exists(temp_path):
             os.unlink(temp_path)
+@app.get("/hello/{name}")
+async def say_hello(name: str):
+    return {"message": f"Hello {name}"}
+
+# {"prompt": "What career should I pursue?"}
+@app.post("/career-advice")
+async def career_advice(request: CareerAdviceRequest):
+    return StreamingResponse(
+        get_career_advice(request),
+        media_type="text/event-stream"
+    )
