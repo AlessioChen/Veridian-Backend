@@ -84,7 +84,7 @@ class LLMService:
             
         return state
 
-    async def generate_agent_response(self, state: ChatState) -> ChatState:
+    async def generate_agent_response(self, state: ChatState) -> AsyncGenerator[ChatState, None]:
         print("Generating agent response")  # Debug
         messages = state["messages"]
         last_message = cast(HumanMessage, messages[-1])
@@ -93,13 +93,20 @@ class LLMService:
         prompt = self.agent_prompts[agent_type]
         chain = prompt | self.agent_llm
         
-        response = await chain.ainvoke({
+        # Use astream instead of ainvoke
+        async for chunk in chain.astream({
             "message": last_message.content,
             "messages": messages[:-1]
-        })
-        
-        state["messages"].append(response)
-        return state
+        }):
+            print(f"Streaming chunk: {chunk.content}")  # Debug
+            if chunk.content:
+                # Create a new state for each chunk
+                new_state = ChatState(
+                    messages=state["messages"],
+                    agent_type=state["agent_type"]
+                )
+                new_state["messages"].append(AIMessage(content=chunk.content))
+                yield new_state
 
     def _create_graph(self) -> StateGraph:
         workflow = StateGraph(ChatState)
@@ -121,15 +128,19 @@ class LLMService:
                 agent_type=""
             )
             
-            async for step in self.workflow.astream(state):
+            previous_content = ""
+            async for step in self.workflow.astream(state, stream_mode="node"):  # Add stream_mode="node"
                 print(f"Received step: {step}")  # Debug
-                if "messages" in step:
+                if isinstance(step, dict) and "messages" in step:
                     messages = step["messages"]
                     if messages and isinstance(messages[-1], AIMessage):
-                        content = messages[-1].content
-                        print(f"Yielding content: {content}")  # Debug
-                        yield content
-                        
+                        current_content = messages[-1].content
+                        if current_content != previous_content:
+                            new_content = current_content[len(previous_content):]
+                            print(f"Yielding new content: {new_content}")  # Debug
+                            yield new_content
+                            previous_content = current_content
+                    
         except Exception as e:
             print(f"Error in generate_response: {str(e)}")
             raise HTTPException(status_code=500, detail=str(e)) 
