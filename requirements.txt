@@ -1,2 +1,4 @@
 groq 
 fastapi
+dotenv
+uvicorn
