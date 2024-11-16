@@ -20,6 +20,7 @@ class ChatRequest(BaseModel):
 class ChatState(TypedDict):
     messages: Annotated[list, add_messages]
     agent_type: str
+    history: list
 
 class LLMService:
     def __init__(self):
@@ -66,6 +67,9 @@ class LLMService:
         
         # Initialize the graph
         self.workflow = self._create_graph()
+        
+        # Add conversation history storage
+        self.conversation_history = {}  # Store history by user_id
 
     async def route_message(self, state: ChatState) -> ChatState:
         print("Routing message")  # Debug
@@ -98,12 +102,13 @@ class LLMService:
         
         agent_payload = {
             "message": last_message.content,
-            "messages": messages[:-1]
+            "messages": state["history"]
         }
         
         new_state = ChatState(
             messages=state["messages"].copy(),
-            agent_type=state["agent_type"]
+            agent_type=state["agent_type"],
+            history=state["history"]
         )
         
         async for chunk in chain.astream(agent_payload):
@@ -128,14 +133,27 @@ class LLMService:
     async def generate_response(self, user_id: str, message: str) -> AsyncGenerator[Dict[str, Any], None]:
         try:
             print(f"Starting response generation for message: {message}")
+            
+            # Initialize or get existing history
+            if user_id not in self.conversation_history:
+                self.conversation_history[user_id] = []
+            
+            # Add new message to history
+            self.conversation_history[user_id].append(HumanMessage(content=message))
+            
             state = ChatState(
                 messages=[HumanMessage(content=message)],
-                agent_type=""
+                agent_type="",
+                history=self.conversation_history[user_id]
             )
             
             first = True
             async for msg, metadata in self.workflow.astream(state, stream_mode="messages"):
                 if msg.content and not isinstance(msg, HumanMessage):
+                    # Add AI response to history
+                    if isinstance(msg, AIMessage) and not isinstance(msg, AIMessageChunk):
+                        self.conversation_history[user_id].append(msg)
+                    
                     yield {"content": msg.content}
                     print(f"Yielding content chunk: {msg.content}")
 
