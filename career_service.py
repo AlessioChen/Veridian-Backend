@@ -2,10 +2,8 @@ import os
 from fastapi import HTTPException
 from pydantic import BaseModel
 from langchain_groq import ChatGroq
-from langchain.chains import ConversationChain
 from chat_memory import get_session_history
 from typing import AsyncGenerator
-from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
