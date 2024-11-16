@@ -54,12 +54,12 @@ class LLMService:
         
         self.agent_prompts = {
             AgentType.CAREER: ChatPromptTemplate.from_messages([
-                ("system", "You are a career advisor specializing in helping people make strategic career transitions."),
+                ("system", "You are a career advisor specializing in helping people make strategic career transitions. Do not use any markdown formatting in your responses."),
                 MessagesPlaceholder(variable_name="messages"),
                 ("human", "{message}")
             ]),
             AgentType.GENERAL: ChatPromptTemplate.from_messages([
-                ("system", "You are a helpful AI assistant."),
+                ("system", "You are a helpful AI assistant. Do not use any markdown formatting in your responses."),
                 MessagesPlaceholder(variable_name="messages"),
                 ("human", "{message}")
             ])
