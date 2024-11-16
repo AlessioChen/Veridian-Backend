@@ -1,10 +1,9 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException, Form
 from fastapi.responses import JSONResponse, StreamingResponse
 import os
-import aiohttp
-import tempfile
 from datetime import datetime
 from typing import Optional
+from groq_services import GroqServices
 from career_service import CareerAdviceRequest, get_career_advice
 
 parent_directory = os.path.dirname(os.getcwd())
@@ -12,18 +11,7 @@ AUDIO_DIR = f"{parent_directory}/audio-files"
 
 app = FastAPI(title="MP3 Processing API")
 
-# CORS configuration
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=["*"],  # Configure appropriately for production
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
-
 # Configuration
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-GROQ_API_URL = "https://api.groq.com/openai/v1/audio/transcriptions"
 MAX_FILE_SIZE = 25 * 1024 * 1024  # 25MB
 
 
@@ -108,51 +96,9 @@ async def validate_mp3(file: UploadFile) -> None:
     await file.seek(0)
 
 
-async def process_mp3(file_data: bytes, filename: str) -> dict:
-    """
-    Process MP3 data with Groq's Whisper API
-    """
-    # Create temporary file
-    with tempfile.NamedTemporaryFile(suffix='.mp3', delete=False) as temp_file:
-        temp_file.write(file_data)
-        temp_path = temp_file.name
+async def process_mp3(file_data: bytes, filename: str) -> str:
+    return await GroqServices.process_audio_to_text(file_data, filename)
 
-    try:
-        headers = {
-            "Authorization": f"Bearer {GROQ_API_KEY}",
-            "Content-Type": "multipart/form-data"
-        }
-
-        form_data = aiohttp.FormData()
-        form_data.add_field(
-            'file',
-            open(temp_path, 'rb'),
-            filename=filename,
-            content_type='audio/mpeg'
-        )
-        form_data.add_field('model', 'whisper-1')
-
-        async with aiohttp.ClientSession() as session:
-            async with session.post(
-                    GROQ_API_URL,
-                    headers=headers,
-                    data=form_data
-            ) as response:
-                if response.status == 200:
-                    return await response.json()
-                else:
-                    error_text = await response.text()
-                    raise HTTPException(
-                        status_code=response.status,
-                        detail=f"Transcription API error: {error_text}"
-                    )
-    finally:
-        # Clean up temporary file
-        if os.path.exists(temp_path):
-            os.unlink(temp_path)
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
 
 # Usage {"prompt": "What career should I pursue?"}
 @app.post("/career-advice")
