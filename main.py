@@ -154,7 +154,7 @@ async def process_mp3(file_data: bytes, filename: str) -> dict:
 async def say_hello(name: str):
     return {"message": f"Hello {name}"}
 
-# {"prompt": "What career should I pursue?"}
+# Usage {"prompt": "What career should I pursue?"}
 @app.post("/career-advice")
 async def career_advice(request: CareerAdviceRequest):
     return StreamingResponse(
