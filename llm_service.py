@@ -150,11 +150,8 @@ class LLMService:
             first = True
             async for msg, metadata in self.workflow.astream(state, stream_mode="messages"):
                 if msg.content and not isinstance(msg, HumanMessage):
-                    # Add AI response to history
-                    if isinstance(msg, AIMessage) and not isinstance(msg, AIMessageChunk):
-                        self.conversation_history[user_id].append(msg)
-                    
-                    yield {"content": msg.content}
+                    if msg.content not in [AgentType.CAREER, AgentType.GENERAL]:
+                        yield {"content": msg.content}
                     print(f"Yielding content chunk: {msg.content}")
 
                 if isinstance(msg, AIMessageChunk):

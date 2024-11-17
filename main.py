@@ -1,13 +1,16 @@
-from llm_service import LLMService, ChatRequest
-from fastapi import FastAPI, UploadFile, File, HTTPException, Form, Request
-from fastapi.responses import JSONResponse, StreamingResponse
+from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from pathlib import Path
+from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
+
+
+from llm_service import LLMService, ChatRequest
 from groq_services import GroqServices
-import os
-import json
 from perplexity_service import PerplexityService
 from models.user_profile import UserProfile
+
+from pathlib import Path
+import os
 
 app = FastAPI()
 llm_service = LLMService()
@@ -25,39 +28,36 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.post("/chat")
 async def chat(request: ChatRequest):
     print(f"Chat endpoint received request: {request.message}")
     
-    async def generate_response():
-        print("Starting response generation in endpoint")
-        try:
-            async for chunk in llm_service.generate_response("default_user", request.message):
-                content = chunk.get('content', '')
-                if content:
-                    # Format as SSE
-                    yield f"data: {json.dumps({'content': content})}\n\n"
-        except Exception as e:
-            print(f"Error in endpoint generate_response: {str(e)}")
-            raise
+    try:
 
-    return StreamingResponse(
-        generate_response(),
-        media_type="text/event-stream",
-        headers={
-            "Cache-Control": "no-cache",
-            "Connection": "keep-alive",
-        }
-    )
+        response = ""
+        
+        async for chunk in llm_service.generate_response("default_user", request.message):
+            content = chunk.get('content', '')
+            if content:
+                response += content  
+        
+        return JSONResponse(
+            status_code=200,
+            content={
+                "response": response,
+            }
+        )
+    
+    except Exception as e:
+        print(f"Error in endpoint generate_response: {str(e)}")
+        return "Sorry, something went wrong. Please try again later."
 
 @app.post("/transcript/")
 async def upload_audio(file: UploadFile = File(...)):
     SAVE_DIR = Path("uploaded_audio")
     SAVE_DIR.mkdir(exist_ok=True)
 
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
 
 @app.post("/user-profile")
 async def create_profile(user_profile: UserProfile):
