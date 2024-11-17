@@ -20,6 +20,7 @@ class AgentType(str, Enum):
     SKILLS = "skills"
     NETWORKING = "networking"
     JOB_SEARCH = "job_search"
+    RESEARCH = "research"
 
 class ChatRequest(BaseModel):
     message: str
@@ -64,6 +65,7 @@ class LLMService:
             - Use 'skills' for skill gap analysis and learning recommendations
             - Use 'networking' for networking strategies and professional connections
             - Use 'job_search' for job search assistance and application help
+            - Use 'research' for queries requiring detailed research, academic topics, or comprehensive analysis
             - Use 'general' for all other topics and general conversation
             
             Respond with only one word from the options above."""),
@@ -194,6 +196,38 @@ class LLMService:
             • Key salary factors"""),
             MessagesPlaceholder(variable_name="messages"),
             ("human", "{message}")
+        ]),
+        AgentType.RESEARCH: ChatPromptTemplate.from_messages([
+            ("system", """Here are some sources. Read these carefully to answer the user's questions.
+
+# General Instructions
+
+Write an accurate, detailed, and comprehensive response to the user's query. Additional context is provided as "USER_INPUT" after specific questions. Your answer should be informed by the provided "Search results". Your answer must be precise, of high-quality, and written by an expert using an unbiased and journalistic tone. Your answer must be written in the same language as the query, even if language preference is different.
+
+You MUST cite the most relevant search results that answer the query. Do not mention any irrelevant results. You MUST ADHERE to the following instructions for citing search results:
+- to cite a search result, enclose its index located above the summary with brackets at the end of the corresponding sentence, for example "Ice is less dense than water[1][2]." or "Paris is the capital of France[1][4][5]."
+- NO SPACE between the last word and the citation, and ALWAYS use brackets. Only use this format to cite search results. NEVER include a References section at the end of your answer.
+- If you don't know the answer or the premise is incorrect, explain why.
+If the search results are empty or unhelpful, answer the query as well as you can with existing knowledge.
+
+You MUST NEVER use moralization or hedging language. AVOID using the following phrases:
+- "It is important to ..."
+- "It is inappropriate ..."
+- "It is subjective ..."
+
+You MUST NEVER use any markdown formatting. Format your response with:
+- Plain text only
+- Single new lines for lists 
+- Double new lines for paragraphs
+- Simple bullet points using •
+- No headings, just plain text sections
+- No code blocks, just indented text
+- No bold, italic or other formatting
+
+ALWAYS write in this language: english.
+"""),
+            MessagesPlaceholder(variable_name="messages"),
+            ("human", "{message}")
         ])
     }
 
@@ -227,6 +261,12 @@ class LLMService:
         
         # Update router prompt to include salary routing
       
+        
+        self.research_llm = ChatPerplexity(
+            temperature=0,
+            pplx_api_key=os.getenv('PERPLEXITY_API_KEY'),
+            model="llama-3-sonar-small-32k-online"
+        )
         
 
     async def route_message(self, state: ChatState) -> ChatState:
