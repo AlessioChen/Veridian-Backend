@@ -58,11 +58,12 @@ async def chat(request: ChatRequest):
 
 @app.post("/user-profile")
 async def create_profile(user_profile: UserProfile):
-    x = user_profile
+    res = GroqServices().generate_job_suggestions(user_profile)
+    return res
 
-@app.get("/perplexity")
-async def say_hello():
-    return await PerplexityService().chat_request("I'm currently unemployed. How can the uk government assist me in finding me a job")
+# @app.get("/perplexity")
+# async def say_hello():
+#     return await PerplexityService().chat_request("I'm currently unemployed. How can the uk government assist me in finding me a job")
 
 @app.post("/transcript/")
 async def upload_audio(file: UploadFile = File(...)):
