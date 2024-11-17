@@ -113,7 +113,7 @@ class LLMService:
         
         async for chunk in chain.astream(agent_payload):
             if chunk.content:
-                print(f"Agent generating chunk: {chunk.content}")
+                # print(f"Agent generating chunk: {chunk.content}")
                 # Yield each chunk immediately
                 new_state["messages"] = messages + [AIMessage(content=chunk.content)]
                 yield new_state
@@ -152,7 +152,7 @@ class LLMService:
                 if msg.content and not isinstance(msg, HumanMessage):
                     if msg.content not in [AgentType.CAREER, AgentType.GENERAL]:
                         yield {"content": msg.content}
-                    print(f"Yielding content chunk: {msg.content}")
+                    # print(f"Yielding content chunk: {msg.content}")
 
                 if isinstance(msg, AIMessageChunk):
                     if first:
