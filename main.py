@@ -53,10 +53,7 @@ async def chat(request: ChatRequest):
         print(f"Error in endpoint generate_response: {str(e)}")
         return "Sorry, something went wrong. Please try again later."
 
-@app.post("/transcript/")
-async def upload_audio(file: UploadFile = File(...)):
-    SAVE_DIR = Path("uploaded_audio")
-    SAVE_DIR.mkdir(exist_ok=True)
+
 
 
 @app.post("/user-profile")
@@ -69,8 +66,8 @@ async def say_hello():
 
 @app.post("/transcript/")
 async def upload_audio(file: UploadFile = File(...)):
-    save_dir = Path("uploaded_audio")
-    save_dir.mkdir(exist_ok=True)
+    SAVE_DIR = Path("uploaded_audio")
+    SAVE_DIR.mkdir(exist_ok=True)
 
     try:
         if not file:
@@ -79,7 +76,7 @@ async def upload_audio(file: UploadFile = File(...)):
                 content={"error": "No file uploaded"}
             )
 
-        file_path = save_dir / file.filename
+        file_path = SAVE_DIR / file.filename
         with file_path.open("wb") as audio_file:
             audio_file.write(await file.read())
 
