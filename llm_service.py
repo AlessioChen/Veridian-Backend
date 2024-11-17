@@ -79,7 +79,7 @@ class LLMService:
             • Clear bullet points for key information
             • Short paragraphs (2-3 sentences max)
             • Line breaks between sections
-            • No markdown formatting
+            • Use markdown formatting
             
             Focus on:
             • Matching current skills to UK jobs
@@ -94,7 +94,7 @@ class LLMService:
             • Clear bullet points for key points
             • Short paragraphs (2-3 sentences max)
             • Line breaks between sections
-            • No markdown formatting
+            • Use markdown formatting
             
             Cover these areas briefly:
             • Current situation (job, skills, education)
@@ -109,7 +109,7 @@ class LLMService:
             • Clear bullet points for suggestions
             • Short paragraphs (2-3 sentences max)
             • Line breaks between sections
-            • No markdown formatting
+            • Use markdown formatting
             
             Provide:
             • 3-4 key improvements maximum
@@ -124,7 +124,7 @@ class LLMService:
             • Clear bullet points for questions/answers
             • Short paragraphs (2-3 sentences max)
             • Line breaks between sections
-            • No markdown formatting
+            • Use markdown formatting
             
             Focus on:
             • 3-4 key interview questions
@@ -139,7 +139,7 @@ class LLMService:
             • Clear bullet points for recommendations
             • Short paragraphs (2-3 sentences max)
             • Line breaks between sections
-            • No markdown formatting
+            • Use markdown formatting
             
             Provide:
             • 2-3 key skill gaps identified
@@ -154,7 +154,7 @@ class LLMService:
             • Clear bullet points for strategies
             • Short paragraphs (2-3 sentences max)
             • Line breaks between sections
-            • No markdown formatting
+            • Use markdown formatting
             
             Focus on:
             • 2-3 networking tactics
@@ -169,7 +169,7 @@ class LLMService:
             • Clear bullet points for strategies
             • Short paragraphs (2-3 sentences max)
             • Line breaks between sections
-            • No markdown formatting
+            • Use markdown formatting
             
             Provide:
             • 2-3 relevant job boards
@@ -184,7 +184,7 @@ class LLMService:
             • Clear bullet points for salary information
             • Short paragraphs (2-3 sentences max)
             • Line breaks between sections
-            • No markdown formatting
+            • Use markdown formatting
             
             Use this official UK salary data:
             {self.salary_data}
@@ -215,14 +215,8 @@ You MUST NEVER use moralization or hedging language. AVOID using the following p
 - "It is inappropriate ..."
 - "It is subjective ..."
 
-You MUST NEVER use any markdown formatting. Format your response with:
-- Plain text only
-- Single new lines for lists 
-- Double new lines for paragraphs
-- Simple bullet points using •
-- No headings, just plain text sections
-- No code blocks, just indented text
-- No bold, italic or other formatting
+You must write in markdown format.
+Return links in a markdown format.
 
 ALWAYS write in this language: english.
 """),
