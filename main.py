@@ -58,8 +58,18 @@ async def chat(request: ChatRequest):
 
 @app.post("/user-profile")
 async def create_profile(user_profile: UserProfile):
-    res = GroqServices().generate_job_suggestions(user_profile)
-    return res
+    try:
+        res = GroqServices().generate_job_suggestions(user_profile)
+        return JSONResponse(
+            status_code=200,
+            content={"suggestions": res}
+        )
+    except Exception as e:
+        print(f"Error in user profile endpoint: {str(e)}")
+        return JSONResponse(
+            status_code=500,
+            content={"error": "Failed to generate job suggestions"}
+        )
 
 # @app.get("/perplexity")
 # async def say_hello():

@@ -198,8 +198,13 @@ class GroqServices:
             stop=None
         )
 
-        x = completion
-        return completion
+        # Collect the streaming response into a single string
+        full_response = ""
+        for chunk in completion:
+            if chunk.choices[0].delta.content is not None:
+                full_response += chunk.choices[0].delta.content
+        
+        return full_response
 
 
     @staticmethod

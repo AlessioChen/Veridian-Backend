@@ -37,7 +37,7 @@ class LLMService:
         self.agent_llm = ChatGroq(
             groq_api_key=os.getenv('GROQ_API'),
             model_name="llama-3.2-90b-text-preview",
-            temperature=0.7,
+            temperature=0.2,
             max_tokens=1024,
             streaming=True
         )
@@ -54,12 +54,12 @@ class LLMService:
         
         self.agent_prompts = {
             AgentType.CAREER: ChatPromptTemplate.from_messages([
-                ("system", "You are a career advisor specializing in helping people make strategic career transitions. Do not use any markdown formatting in your responses."),
+                ("system", "You are a genius career advisor specializing in helping people make strategic career transitions. Do not use any markdown formatting in your responses. Create concise responses, explain your reasoning when you make step by step plans. Think about the current skills of the users existing job and correlate these skills to other occupations."),
                 MessagesPlaceholder(variable_name="messages"),
                 ("human", "{message}")
             ]),
             AgentType.GENERAL: ChatPromptTemplate.from_messages([
-                ("system", "You are a helpful AI assistant. Do not use any markdown formatting in your responses."),
+                ("system", "You are a helpful AI assistant. Do not use any markdown formatting in your responses. You will check that these areas have been covered: current job, current salary, work experience, skills, industry knowledge, education, location constraints, time constraints, and goals. If any of these areas have not been covered, please remind the user to provide that information. You respond with concise answers and a professional tone."),
                 MessagesPlaceholder(variable_name="messages"),
                 ("human", "{message}")
             ])
