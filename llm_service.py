@@ -11,6 +11,7 @@ from typing import TypedDict, Sequence, Union, cast
 from langgraph.graph.message import add_messages
 
 class AgentType(str, Enum):
+    SALARY = "salary"
     CAREER = "career"
     GENERAL = "general"
     RESUME = "resume"
@@ -30,6 +31,11 @@ class ChatState(TypedDict):
 class LLMService:
     def __init__(self):
         print("Initializing LLM Service")  # Debug
+        
+        # Add the salary data to the system first
+        with open('datasets/yr-earnings-occupation.yaml', 'r') as file:
+            self.salary_data = file.read()
+            
         # Initialize LLM configurations with streaming enabled
         self.router_llm = ChatGroq(
             groq_api_key=os.getenv('GROQ_API'),
@@ -50,6 +56,7 @@ class LLMService:
         # Initialize prompts
         self.router_prompt = ChatPromptTemplate.from_messages([
             ("system", """You are an intelligent router that determines which specialized agent should handle user requests.
+            - Use 'salary' for questions about job salaries, earning potential, or salary-focused career advice
             - Use 'career' for general career advice and professional development
             - Use 'resume' for resume and cover letter optimization
             - Use 'interview' for interview preparation and practice
@@ -125,6 +132,25 @@ class LLMService:
             - Suggest tracking methods and job search strategies."""),
             MessagesPlaceholder(variable_name="messages"),
             ("human", "{message}")
+        ]),
+        AgentType.SALARY: ChatPromptTemplate.from_messages([
+            ("system", f"""You are a UK salary and career advisor with access to accurate occupational salary data.
+            Your responses should not include any markdown formatting.
+            
+            Use this official UK salary data to inform your recommendations:
+            {self.salary_data}
+            
+            When making suggestions:
+            - Always reference accurate salary figures from the data
+            - Compare salaries across related roles
+            - Consider career progression paths and salary growth potential
+            - Highlight roles that match the user's skills and salary expectations
+            - Explain salary variations within industries
+            - Include median salaries for all roles you mention
+            
+            Format salary mentions as "£XX,XXX" and always specify they are median figures."""),
+            MessagesPlaceholder(variable_name="messages"),
+            ("human", "{message}")
         ])
     }
 
@@ -134,6 +160,43 @@ class LLMService:
         
         # Add conversation history storage
         self.conversation_history = {}  # Store history by user_id
+
+        # Add new salary-aware agent prompt
+        self.agent_prompts[AgentType.SALARY] = ChatPromptTemplate.from_messages([
+            ("system", f"""You are a UK salary and career advisor with access to accurate occupational salary data.
+            Your responses should not include any markdown formatting.
+            
+            Use this official UK salary data to inform your recommendations:
+            {self.salary_data}
+            
+            When making suggestions:
+            - Always reference accurate salary figures from the data
+            - Compare salaries across related roles
+            - Consider career progression paths and salary growth potential
+            - Highlight roles that match the user's skills and salary expectations
+            - Explain salary variations within industries
+            - Include median salaries for all roles you mention
+            
+            Format salary mentions as "£XX,XXX" and always specify they are median figures."""),
+            MessagesPlaceholder(variable_name="messages"),
+            ("human", "{message}")
+        ])
+        
+        # Update router prompt to include salary routing
+        self.router_prompt = ChatPromptTemplate.from_messages([
+            ("system", """You are an intelligent router that determines which specialized agent should handle user requests.
+            - Use 'salary' for questions about job salaries, earning potential, or salary-focused career advice
+            - Use 'career' for general career advice and professional development
+            - Use 'resume' for resume and cover letter optimization
+            - Use 'interview' for interview preparation and practice
+            - Use 'skills' for skill gap analysis and learning recommendations
+            - Use 'networking' for networking strategies and professional connections
+            - Use 'job_search' for job search assistance and application help
+            - Use 'general' for all other topics and general conversation
+            
+            Respond with only one word from the options above."""),
+            ("human", "{message}")
+        ])
 
     async def route_message(self, state: ChatState) -> ChatState:
         print("Routing message")  # Debug

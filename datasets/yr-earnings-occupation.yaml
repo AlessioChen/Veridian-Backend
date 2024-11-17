@@ -1,0 +1,659 @@
+occupations:
+- description: Chief executives and senior officials
+  median: 84131.0
+- description: Production managers and directors in manufacturing
+  median: 51469.0
+- description: Production managers and directors in construction
+  median: 50095.0
+- description: Production managers and directors in mining and energy
+  median: 51642.0
+- description: Financial managers and directors
+  median: 70000.0
+- description: Marketing, sales and advertising directors
+  median: 83015.0
+- description: Public relations and communications directors
+  median: 79886.0
+- description: Purchasing managers and directors
+  median: 50315.0
+- description: Charitable organisation managers and directors
+  median: 40921.0
+- description: Human resource managers and directors
+  median: 49409.0
+- description: Information technology directors
+  median: 80000.0
+- description: Functional managers and directors n.e.c.
+  median: 69933.0
+- description: Directors in logistics, warehousing and transport
+  median: 72177.0
+- description: Managers and directors in retail and wholesale
+  median: 33121.0
+- description: Senior police officers
+  median: 59053.0
+- description: Social services managers and directors
+  median: 41002.0
+- description: Managers and proprietors in agriculture and horticulture
+  median: 35997.0
+- description: Managers and proprietors in forestry, fishing and related services
+  median: 29463.0
+- description: Hotel and accommodation managers and proprietors
+  median: 32701.0
+- description: Restaurant and catering establishment managers and proprietors
+  median: 30717.0
+- description: Publicans and managers of licensed premises
+  median: 33477.0
+- description: Leisure and sports managers
+  median: 33134.0
+- description: Health care practice managers
+  median: 42958.0
+- description: Managers in transport and distribution
+  median: 41465.0
+- description: Managers in storage and warehousing
+  median: 32040.0
+- description: Managers in logistics
+  median: 42368.0
+- description: Property, housing and estate managers
+  median: 38352.0
+- description: Waste disposal and environmental services managers
+  median: 48825.0
+- description: Managers and directors in the creative industries
+  median: 41953.0
+- description: Managers and proprietors in other services n.e.c.
+  median: 34411.0
+- description: Chemical scientists
+  median: 35186.0
+- description: Biochemists and biomedical scientists
+  median: 44797.0
+- description: Physical scientists
+  median: 47289.0
+- description: Social and humanities scientists
+  median: 36447.0
+- description: Natural and social science professionals n.e.c.
+  median: 41175.0
+- description: Civil engineers
+  median: 45524.0
+- description: Mechanical engineers
+  median: 42463.0
+- description: Electrical engineers
+  median: 53488.0
+- description: Electronics engineers
+  median: 49882.0
+- description: Production and process engineers
+  median: 43669.0
+- description: Aerospace engineers
+  median: 46419.0
+- description: Engineering project managers and project engineers
+  median: 48845.0
+- description: Engineering professionals n.e.c.
+  median: 42939.0
+- description: IT project managers
+  median: 51933.0
+- description: IT managers
+  median: 50880.0
+- description: IT business analysts, architects and systems designers
+  median: 51698.0
+- description: Programmers and software development professionals
+  median: 49430.0
+- description: Cyber security professionals
+  median: 45294.0
+- description: IT quality and testing professionals
+  median: 39914.0
+- description: IT network professionals
+  median: 42841.0
+- description: Information technology professionals n.e.c.
+  median: 44244.0
+- description: Web design professionals
+  median: 41288.0
+- description: Graphic and multimedia designers
+  median: 29104.0
+- description: Conservation professionals
+  median: 36635.0
+- description: Environment professionals
+  median: 36115.0
+- description: Research and development (R&D) managers
+  median: 49219.0
+- description: Other researchers, unspecified discipline
+  median: 40810.0
+- description: Generalist medical practitioners
+  median: 41296.0
+- description: Specialist medical practitioners
+  median: 66031.0
+- description: Physiotherapists
+  median: 40888.0
+- description: Occupational therapists
+  median: 37423.0
+- description: Speech and language therapists
+  median: 35963.0
+- description: Clinical psychologists
+  median: 36315.0
+- description: Other psychologists
+  median: 35311.0
+- description: Therapy professionals n.e.c.
+  median: 34448.0
+- description: Midwifery nurses
+  median: 41423.0
+- description: Community nurses
+  median: 38129.0
+- description: Specialist nurses
+  median: 42136.0
+- description: Nurse practitioners
+  median: 41523.0
+- description: Mental health nurses
+  median: 44237.0
+- description: Children's nurses
+  median: 34024.0
+- description: Other nursing professionals
+  median: 37960.0
+- description: Veterinarians
+  median: 48062.0
+- description: Pharmacists
+  median: 46139.0
+- description: Medical radiographers
+  median: 44296.0
+- description: Paramedics
+  median: 48688.0
+- description: Other health professionals n.e.c.
+  median: 40565.0
+- description: Higher education teaching professionals
+  median: 47726.0
+- description: Further education teaching professionals
+  median: 40738.0
+- description: Secondary education teaching professionals
+  median: 42818.0
+- description: Primary education teaching professionals
+  median: 40059.0
+- description: Nursery education teaching professionals
+  median: 31648.0
+- description: Special needs education teaching professionals
+  median: 36256.0
+- description: Teachers of English as a foreign language
+  median: 36562.0
+- description: Teaching professionals n.e.c.
+  median: 30860.0
+- description: Head teachers and principals
+  median: 66014.0
+- description: Education managers
+  median: 40722.0
+- description: Education advisers and school inspectors
+  median: 37486.0
+- description: Early education and childcare services managers
+  median: 25813.0
+- description: Other educational professionals n.e.c
+  median: 43050.0
+- description: Barristers and judges
+  median: 52416.0
+- description: Solicitors and lawyers
+  median: 52296.0
+- description: Legal professionals n.e.c.
+  median: 29571.0
+- description: Chartered and certified accountants
+  median: 46847.0
+- description: Finance and investment analysts and advisers
+  median: 40629.0
+- description: Taxation experts
+  median: 46272.0
+- description: Management consultants and business analysts
+  median: 48002.0
+- description: Marketing and commercial managers
+  median: 46488.0
+- description: Actuaries, economists and statisticians
+  median: 47985.0
+- description: Business and related research professionals
+  median: 36528.0
+- description: Business, research and administrative professionals n.e.c.
+  median: 52241.0
+- description: Business and financial project management professionals
+  median: 52896.0
+- description: Architects
+  median: 45894.0
+- description: Chartered architectural technologists, planning officers and consultants
+  median: 36600.0
+- description: Quantity surveyors
+  median: 45526.0
+- description: Chartered surveyors
+  median: 41555.0
+- description: Construction project managers and related professionals
+  median: 40501.0
+- description: Social workers
+  median: 40713.0
+- description: Clergy
+  median: 27689.0
+- description: Welfare professionals n.e.c.
+  median: 33426.0
+- description: Librarians
+  median: 31660.0
+- description: Archivists and curators
+  median: 33560.0
+- description: Quality control and planning engineers
+  median: 40000.0
+- description: Quality assurance and regulatory professionals
+  median: 42474.0
+- description: Environmental health professionals
+  median: 38873.0
+- description: Newspaper and periodical editors
+  median: 40371.0
+- description: Newspaper and periodical journalists and reporters
+  median: 40762.0
+- description: Public relations professionals
+  median: 35404.0
+- description: Laboratory technicians
+  median: 24717.0
+- description: Electrical and electronics technicians
+  median: 34334.0
+- description: Engineering technicians
+  median: 39827.0
+- description: Building and civil engineering technicians
+  median: 29911.0
+- description: Quality assurance technicians
+  median: 28634.0
+- description: Planning, process and production technicians
+  median: 33684.0
+- description: Science, engineering and production technicians n.e.c.
+  median: 32111.0
+- description: CAD, drawing and architectural technicians
+  median: 31194.0
+- description: IT operations technicians
+  median: 31141.0
+- description: IT user support technicians
+  median: 32354.0
+- description: Database administrators and web content technicians
+  median: 31500.0
+- description: Pharmaceutical technicians
+  median: 26840.0
+- description: Medical and dental technicians
+  median: 25978.0
+- description: Youth and community workers
+  median: 29013.0
+- description: Child and early years officers
+  median: 28216.0
+- description: Housing officers
+  median: 31378.0
+- description: Counsellors
+  median: 29170.0
+- description: Welfare and housing associate professionals n.e.c.
+  median: 26554.0
+- description: Higher level teaching assistants
+  median: 22283.0
+- description: Early education and childcare practitioners
+  median: 20340.0
+- description: Veterinary nurses
+  median: 24370.0
+- description: Police officers (sergeant and below)
+  median: 44830.0
+- description: Fire service officers (watch manager and below)
+  median: 39477.0
+- description: Prison service officers (below principal officer)
+  median: 30291.0
+- description: Protective service associate professionals n.e.c.
+  median: 39193.0
+- description: Authors, writers and translators
+  median: 33780.0
+- description: Arts officers, producers and directors
+  median: 37485.0
+- description: Photographers, audio-visual and broadcasting equipment operators
+  median: 29046.0
+- description: Interior designers
+  median: 33274.0
+- description: Clothing, fashion and accessories designers
+  median: 40503.0
+- description: Sports coaches, instructors and officials
+  median: 23206.0
+- description: Aircraft pilots and air traffic controllers
+  median: 71676.0
+- description: Legal associate professionals
+  median: 29965.0
+- description: Insurance underwriters
+  median: 35248.0
+- description: Financial and accounting technicians
+  median: 47728.0
+- description: Financial accounts managers
+  median: 41622.0
+- description: Estimators, valuers and assessors
+  median: 34941.0
+- description: Project support officers
+  median: 31988.0
+- description: Data analysts
+  median: 33174.0
+- description: Business associate professionals n.e.c.
+  median: 28346.0
+- description: Buyers and procurement officers
+  median: 32972.0
+- description: Business sales executives
+  median: 34526.0
+- description: Merchandisers
+  median: 26702.0
+- description: Marketing associate professionals
+  median: 30601.0
+- description: Estate agents and auctioneers
+  median: 28125.0
+- description: Sales accounts and business development managers
+  median: 52495.0
+- description: Events managers and organisers
+  median: 28479.0
+- description: Public services associate professionals
+  median: 38016.0
+- description: Human resources and industrial relations officers
+  median: 29744.0
+- description: Careers advisers and vocational guidance specialists
+  median: 27092.0
+- description: Other vocational and industrial trainers
+  median: 32001.0
+- description: Inspectors of standards and regulations
+  median: 35284.0
+- description: Health and safety managers and officers
+  median: 40879.0
+- description: National government administrative occupations
+  median: 28124.0
+- description: Local government administrative occupations
+  median: 27305.0
+- description: Officers of non-governmental organisations
+  median: 27416.0
+- description: Book-keepers, payroll managers and wages clerks
+  median: 28000.0
+- description: Bank and post office clerks
+  median: 24734.0
+- description: Finance officers
+  median: 27852.0
+- description: Financial administrative occupations n.e.c.
+  median: 25429.0
+- description: Records clerks and assistants
+  median: 25148.0
+- description: Pensions and insurance clerks and assistants
+  median: 25201.0
+- description: Stock control clerks and assistants
+  median: 26704.0
+- description: Transport and distribution clerks and assistants
+  median: 28080.0
+- description: Library clerks and assistants
+  median: 22877.0
+- description: Human resources administrative occupations
+  median: 23104.0
+- description: Office managers
+  median: 35000.0
+- description: Customer service managers
+  median: 33380.0
+- description: Sales administrators
+  median: 25509.0
+- description: Data entry administrators
+  median: 23069.0
+- description: Other administrative occupations n.e.c.
+  median: 25808.0
+- description: Medical secretaries
+  median: 24792.0
+- description: Legal secretaries
+  median: 23999.0
+- description: School secretaries
+  median: 22547.0
+- description: Personal assistants and other secretaries
+  median: 30328.0
+- description: Receptionists
+  median: 21692.0
+- description: Farmers
+  median: 29815.0
+- description: Agricultural and fishing trades n.e.c.
+  median: 25600.0
+- description: Sheet metal workers
+  median: 26017.0
+- description: Metal plate workers, smiths, moulders and related occupations
+  median: 31182.0
+- description: Welding trades
+  median: 31695.0
+- description: Metal machining setters and setter-operators
+  median: 32564.0
+- description: Tool makers, tool fitters and markers-out
+  median: 36387.0
+- description: Metal working production and maintenance fitters
+  median: 36350.0
+- description: Precision instrument makers and repairers
+  median: 29231.0
+- description: Air-conditioning and refrigeration installers and repairers
+  median: 39818.0
+- description: Vehicle technicians, mechanics and electricians
+  median: 31959.0
+- description: Vehicle paint technicians
+  median: 31075.0
+- description: Aircraft maintenance and related trades
+  median: 44506.0
+- description: Electricians and electrical fitters
+  median: 35494.0
+- description: Telecoms and related network installers and repairers
+  median: 34990.0
+- description: Computer system and equipment installers and servicers
+  median: 30971.0
+- description: Security system installers and repairers
+  median: 35796.0
+- description: Electrical service and maintenance mechanics and repairers
+  median: 36063.0
+- description: Electrical and electronic trades n.e.c.
+  median: 40386.0
+- description: Skilled metal, electrical and electronic trades supervisors
+  median: 38350.0
+- description: Steel erectors
+  median: 34797.0
+- description: Bricklayers
+  median: 30939.0
+- description: Plumbers & heating and ventilating installers and repairers
+  median: 35248.0
+- description: Carpenters and joiners
+  median: 29734.0
+- description: Glaziers, window fabricators and fitters
+  median: 26584.0
+- description: Construction and building trades n.e.c.
+  median: 28989.0
+- description: Plasterers
+  median: 32375.0
+- description: Floorers and wall tilers
+  median: 32557.0
+- description: Painters and decorators
+  median: 28570.0
+- description: Construction and building trades supervisors
+  median: 38070.0
+- description: Upholsterers
+  median: 23380.0
+- description: Textiles, garments and related trades n.e.c.
+  median: 23239.0
+- description: Printers
+  median: 28085.0
+- description: Print finishing and binding workers
+  median: 25718.0
+- description: Butchers
+  median: 26084.0
+- description: Bakers and flour confectioners
+  median: 21839.0
+- description: Chefs
+  median: 26000.0
+- description: Cooks
+  median: 21777.0
+- description: Catering and bar managers
+  median: 25901.0
+- description: Other skilled trades n.e.c.
+  median: 30126.0
+- description: Early education and childcare assistants
+  median: 21308.0
+- description: Teaching assistants
+  median: 19033.0
+- description: Educational support assistants
+  median: 19343.0
+- description: Animal care services occupations n.e.c.
+  median: 21933.0
+- description: Nursing auxiliaries and assistants
+  median: 25129.0
+- description: Ambulance staff (excluding paramedics)
+  median: 28301.0
+- description: Dental nurses
+  median: 21739.0
+- description: Houseparents and residential wardens
+  median: 31221.0
+- description: Care workers and home carers
+  median: 23409.0
+- description: Senior care workers
+  median: 25463.0
+- description: Undertakers, mortuary and crematorium assistants
+  median: 27933.0
+- description: Sports and leisure assistants
+  median: 22265.0
+- description: Travel agents
+  median: 29618.0
+- description: Air travel assistants
+  median: 28929.0
+- description: Rail travel assistants
+  median: 36080.0
+- description: Leisure and travel service occupations n.e.c.
+  median: 25700.0
+- description: Hairdressers and barbers
+  median: 19589.0
+- description: Beauticians and related occupations
+  median: 19026.0
+- description: Housekeepers and related occupations
+  median: 22964.0
+- description: Caretakers
+  median: 25303.0
+- description: Cleaning and housekeeping managers and supervisors
+  median: 24926.0
+- description: Police community support officers
+  median: 29779.0
+- description: Parking and civil enforcement occupations
+  median: 23976.0
+- description: Sales and retail assistants
+  median: 21530.0
+- description: Retail cashiers and check-out operators
+  median: 18602.0
+- description: Telephone salespersons
+  median: 22619.0
+- description: Pharmacy and optical dispensing assistants
+  median: 20870.0
+- description: Vehicle and parts salespersons and advisers
+  median: 26698.0
+- description: Debt, rent and other cash collectors
+  median: 24225.0
+- description: Roundspersons and van salespersons
+  median: 23935.0
+- description: Sales related occupations n.e.c.
+  median: 27274.0
+- description: Sales supervisors - retail and wholesale
+  median: 24751.0
+- description: Call and contact centre occupations
+  median: 23676.0
+- description: Telephonists
+  median: 28322.0
+- description: Communication operators
+  median: 29351.0
+- description: Customer service occupations n.e.c.
+  median: 25000.0
+- description: Customer service supervisors
+  median: 31827.0
+- description: Food, drink and tobacco process operatives
+  median: 25602.0
+- description: Textile process operatives
+  median: 27113.0
+- description: Chemical and related process operatives
+  median: 29973.0
+- description: Plastics process operatives
+  median: 25553.0
+- description: Metal making and treating process operatives
+  median: 30407.0
+- description: Process operatives n.e.c.
+  median: 27816.0
+- description: Metal working machine operatives
+  median: 30685.0
+- description: Energy plant operatives
+  median: 35120.0
+- description: Water and sewerage plant operatives
+  median: 32447.0
+- description: Printing machine assistants
+  median: 26000.0
+- description: Plant and machine operatives n.e.c.
+  median: 25000.0
+- description: Assemblers (electrical and electronic products)
+  median: 25089.0
+- description: Assemblers (vehicles and metal goods)
+  median: 33334.0
+- description: Routine inspectors and testers
+  median: 30065.0
+- description: Weighers, graders and sorters
+  median: 29576.0
+- description: Tyre, exhaust and windscreen fitters
+  median: 28813.0
+- description: Sewing machinists
+  median: 21341.0
+- description: Assemblers and routine operatives n.e.c.
+  median: 25215.0
+- description: Scaffolders, stagers and riggers
+  median: 35563.0
+- description: Road construction operatives
+  median: 33232.0
+- description: Rail construction and maintenance operatives
+  median: 37954.0
+- description: Construction operatives n.e.c.
+  median: 27596.0
+- description: Large goods vehicle drivers
+  median: 37256.0
+- description: Bus and coach drivers
+  median: 31038.0
+- description: Delivery drivers and couriers
+  median: 25208.0
+- description: Road transport drivers n.e.c.
+  median: 27393.0
+- description: Crane drivers
+  median: 42180.0
+- description: Fork-lift truck drivers
+  median: 27225.0
+- description: Mobile machine drivers and operatives n.e.c.
+  median: 30684.0
+- description: Train and tram drivers
+  median: 64348.0
+- description: Air transport operatives
+  median: 27642.0
+- description: Rail transport operatives
+  median: 48550.0
+- description: Farm workers
+  median: 26096.0
+- description: Fishing and other elementary agriculture occupations n.e.c.
+  median: 23593.0
+- description: Groundworkers
+  median: 35212.0
+- description: Elementary construction occupations n.e.c.
+  median: 24410.0
+- description: Industrial cleaning process occupations
+  median: 22630.0
+- description: Packers, bottlers, canners and fillers
+  median: 22952.0
+- description: Elementary process plant occupations n.e.c.
+  median: 25206.0
+- description: Postal workers, mail sorters and messengers
+  median: 28681.0
+- description: Elementary administration occupations n.e.c.
+  median: 21808.0
+- description: Street cleaners
+  median: 24131.0
+- description: Cleaners and domestics
+  median: 21058.0
+- description: Launderers, dry cleaners and pressers
+  median: 19612.0
+- description: Refuse and salvage occupations
+  median: 23768.0
+- description: Vehicle valeters and cleaners
+  median: 22796.0
+- description: Security guards and related occupations
+  median: 28216.0
+- description: Elementary storage supervisors
+  median: 27647.0
+- description: Warehouse operatives
+  median: 24945.0
+- description: Delivery operatives
+  median: 22193.0
+- description: Elementary storage occupations n.e.c.
+  median: 28875.0
+- description: Bar and catering supervisors
+  median: 21617.0
+- description: Kitchen and catering assistants
+  median: 20126.0
+- description: Waiters and waitresses
+  median: 18426.0
+- description: Bar staff
+  median: 18103.0
+- description: Coffee shop workers
+  median: 19727.0
+- description: Leisure and theme park attendants
+  median: 17859.0
+- description: Other elementary services occupations n.e.c.
+  median: 22008.0
