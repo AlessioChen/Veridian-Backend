@@ -13,6 +13,11 @@ from langgraph.graph.message import add_messages
 class AgentType(str, Enum):
     CAREER = "career"
     GENERAL = "general"
+    RESUME = "resume"
+    INTERVIEW = "interview"
+    SKILLS = "skills"
+    NETWORKING = "networking"
+    JOB_SEARCH = "job_search"
 
 class ChatRequest(BaseModel):
     message: str
@@ -45,25 +50,84 @@ class LLMService:
         # Initialize prompts
         self.router_prompt = ChatPromptTemplate.from_messages([
             ("system", """You are an intelligent router that determines which specialized agent should handle user requests.
-            - Use 'career' for career advice, job searching, and professional development
+            - Use 'career' for general career advice and professional development
+            - Use 'resume' for resume and cover letter optimization
+            - Use 'interview' for interview preparation and practice
+            - Use 'skills' for skill gap analysis and learning recommendations
+            - Use 'networking' for networking strategies and professional connections
+            - Use 'job_search' for job search assistance and application help
             - Use 'general' for all other topics and general conversation
             
-            Respond with only one word: either 'career' or 'general'"""),
+            Respond with only one word from the options above."""),
             ("human", "{message}")
         ])
         
         self.agent_prompts = {
-            AgentType.CAREER: ChatPromptTemplate.from_messages([
-                ("system", "You are a genius career advisor specializing in helping people make strategic career transitions. Do not use any markdown formatting in your responses. Create concise responses, explain your reasoning when you make step by step plans. Think about the current skills of the users existing job and correlate these skills to other occupations."),
-                MessagesPlaceholder(variable_name="messages"),
-                ("human", "{message}")
-            ]),
-            AgentType.GENERAL: ChatPromptTemplate.from_messages([
-                ("system", "You are a helpful AI assistant. Do not use any markdown formatting in your responses. You will check that these areas have been covered: current job, current salary, work experience, skills, industry knowledge, education, location constraints, time constraints, and goals. If any of these areas have not been covered, please remind the user to provide that information. You respond with concise answers and a professional tone."),
-                MessagesPlaceholder(variable_name="messages"),
-                ("human", "{message}")
-            ])
-        }
+        AgentType.CAREER: ChatPromptTemplate.from_messages([
+            ("system", """You are a genius UK-based career advisor helping users transition careers. 
+            Your responses should not include any markdown formatting.
+            - Match their current skills to relevant UK jobs.
+            - Reference UK-specific job boards (e.g., Indeed, Reed, TotalJobs) and funding schemes (e.g., National Careers Service, Skills Bootcamps).
+            - Provide concise, actionable steps and explain your reasoning clearly."""),
+            MessagesPlaceholder(variable_name="messages"),
+            ("human", "{message}")
+        ]),
+        AgentType.GENERAL: ChatPromptTemplate.from_messages([
+            ("system", """You are a UK-focused career assistant. Ensure these areas are covered:
+            Your responses should not include any markdown formatting.
+            - Current job, salary, work experience, skills, industry, education, location, time constraints, and goals.
+            - Prompt the user for missing information.
+            - Give concise, professional answers tailored to UK users."""),
+            MessagesPlaceholder(variable_name="messages"),
+            ("human", "{message}")
+        ]),
+        AgentType.RESUME: ChatPromptTemplate.from_messages([
+            ("system", """You are an expert in UK CV and cover letter optimisation. 
+            Your responses should not include any markdown formatting.
+            - Highlight transferable skills and use UK job market keywords.
+            - Focus on achievements and maintain ATS-friendly formatting.
+            - Provide specific, actionable edits."""),
+            MessagesPlaceholder(variable_name="messages"),
+            ("human", "{message}")
+        ]),
+        AgentType.INTERVIEW: ChatPromptTemplate.from_messages([
+            ("system", """You are an interview preparation expert for the UK job market.
+            Your responses should not include any markdown formatting.
+            - Conduct mock interviews.
+            - Provide common and industry-specific UK interview questions.
+            - Offer constructive feedback and share best practices."""),
+            MessagesPlaceholder(variable_name="messages"),
+            ("human", "{message}")
+        ]),
+        AgentType.SKILLS: ChatPromptTemplate.from_messages([
+            ("system", """You are a UK skill development advisor.
+            Your responses should not include any markdown formatting.
+            - Identify skill gaps for target jobs.
+            - Recommend relevant courses, e.g., Skills Bootcamps, Open University.
+            - Suggest practical exercises and learning paths."""),
+            MessagesPlaceholder(variable_name="messages"),
+            ("human", "{message}")
+        ]),
+        AgentType.NETWORKING: ChatPromptTemplate.from_messages([
+            ("system", """You are a UK professional networking advisor.
+            Your responses should not include any markdown formatting.
+            - Suggest strategies for LinkedIn UK, local meetups, and industry events.
+            - Help optimise LinkedIn profiles.
+            - Provide outreach templates tailored to UK industries."""),
+            MessagesPlaceholder(variable_name="messages"),
+            ("human", "{message}")
+        ]),
+        AgentType.JOB_SEARCH: ChatPromptTemplate.from_messages([
+            ("system", """You are a UK job search expert.
+            Your responses should not include any markdown formatting.
+            - Help users find jobs on UK boards (e.g., Reed, TotalJobs, GOV.UK Find a Job).
+            - Tailor applications for specific roles.
+            - Suggest tracking methods and job search strategies."""),
+            MessagesPlaceholder(variable_name="messages"),
+            ("human", "{message}")
+        ])
+    }
+
         
         # Initialize the graph
         self.workflow = self._create_graph()

@@ -196,3 +196,73 @@ Performs a generic search using Perplexity.
 - CORS middleware configured for specific origins
 - File size limitations implemented
 - Proper error handling and input validation
+
+## AGENTS
+
+classDiagram
+class AgentType {
+<<enumeration>>
+CAREER
+GENERAL
+RESUME
+INTERVIEW
+SKILLS
+NETWORKING
+JOB_SEARCH
+}
+
+    class ChatRequest {
+        +str message
+    }
+
+    class ChatState {
+        +list messages
+        +str agent_type
+        +list history
+    }
+
+    class LLMService {
+        -ChatGroq router_llm
+        -ChatGroq agent_llm
+        -ChatPromptTemplate router_prompt
+        -dict agent_prompts
+        +__init__()
+    }
+
+    class ChatGroq {
+        +str groq_api_key
+        +str model_name
+        +float temperature
+        +int max_tokens
+        +bool streaming
+    }
+
+    class ChatPromptTemplate {
+        +list messages
+        +from_messages()
+    }
+
+    LLMService --> ChatGroq : uses >
+    LLMService --> ChatPromptTemplate : uses >
+    LLMService --> AgentType : references >
+    ChatState --> AgentType : uses >
+
+    note for ChatGroq "Router uses llama-3.1-8b-instant\nAgents use llama-3.2-90b-text-preview"
+
+    note for LLMService "Manages routing and specialized agent responses\nHandles different prompt templates per agent type"
+
+    note for AgentType "Defines different specializations\nfor handling user requests"
+
+    %% Relationships between prompts and agent types
+    class AgentPrompts {
+        <<interface>>
+        +CAREER: career advisor
+        +GENERAL: general assistant
+        +RESUME: resume writer
+        +INTERVIEW: interview expert
+        +SKILLS: skill advisor
+        +NETWORKING: networking expert
+        +JOB_SEARCH: job strategist
+    }
+
+    LLMService --> AgentPrompts : contains >
