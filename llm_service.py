@@ -58,7 +58,6 @@ class LLMService:
         # Initialize prompts
         self.router_prompt = ChatPromptTemplate.from_messages([
             ("system", """You are an intelligent router that determines which specialized agent should handle user requests.
-            - Use 'salary' for questions about job salaries, earning potential, or salary-focused career advice
             - Use 'career' for general career advice and professional development
             - Use 'resume' for resume and cover letter optimization
             - Use 'interview' for interview preparation and practice
@@ -66,7 +65,7 @@ class LLMService:
             - Use 'networking' for networking strategies and professional connections
             - Use 'job_search' for job search assistance and application help
             - Use 'research' for queries requiring detailed research, academic topics, or comprehensive analysis
-            - Use 'general' for all other topics and general conversation
+            - Use 'general' for all other topics and general conversation and the first conversation, if the user mentions general use this agent.
             
             Respond with only one word from the options above."""),
             ("human", "{message}")
@@ -74,32 +73,153 @@ class LLMService:
         
         self.agent_prompts = {
         AgentType.CAREER: ChatPromptTemplate.from_messages([
-            ("system", """You are a genius UK-based career advisor helping users transition careers.
-            Keep responses concise and well-structured with:
-            • Clear bullet points for key information
-            • Short paragraphs (2-3 sentences max)
-            • Line breaks between sections
-            • Use markdown formatting
-            
-            Focus on:
-            • Matching current skills to UK jobs
-            • Referencing UK job boards (Indeed, Reed, TotalJobs)
-            • Providing 3-4 actionable steps maximum"""),
+            ("system", f"""You are a career advisor assistant called Veridian. You will be given two types of information:
+        ## 1. Personal Career Profile:
+        ## Personal Career Profile:
+        
+        **Jobs:**
+        - **Title:** Job title
+        - **Location:** City, Region, Country
+        - **Dates:**
+          - **Start:** MMM YYYY
+          - **End:** MMM YYYY or Present
+        - **Details:**
+          - Detailed achievement or responsibility 1
+          - Detailed achievement or responsibility 2
+
+        **Education:**
+        - **Level:** education level
+        - **Details:** specific grades or qualifications
+
+        **Skills:**
+        - Current skills list
+
+        **Wanted Skills:**
+        - Desired skills list
+
+        **Location:**
+        - current location
+
+        2. Job Market Data:
+        {self.salary_data}
+
+        Your task is to:
+
+        1. Analyze the person's career trajectory by:
+           - Identifying progression patterns in their roles
+           - Calculating total years of experience
+           - Extracting quantifiable achievements from job details
+           - Mapping skill development across roles
+           - Noting industry transitions and location patterns
+
+        2. Extract and categorize skills from their work history:
+           - Technical skills mentioned in job details
+           - Management and leadership capabilities
+           - Quantitative achievements (e.g., "increased efficiency by X%")
+           - Soft skills demonstrated through responsibilities
+
+        3. Compare their current role against the provided job market data:
+           - Identify roles with higher median salaries
+           - Find positions that build on their demonstrated achievements
+           - Consider location compatibility
+           - Factor in educational requirements vs. their background
+
+        4. Provide a ranked list of 1-3 recommended jobs, including:
+           - Job title and median salary
+           - Alignment with their proven achievements
+           - How their quantifiable results transfer to the new role
+           - Required skill gaps vs. their wanted skills
+           - Geographic considerations based on their location history
+
+        5. Create a detailed transition plan for each role:
+           - Specific qualifications needed given their education level
+           - Training programs that account for their background
+           - Timeline based on their skill acquisition history
+           - Local opportunities for practical experience
+
+        Format your response as:
+
+        Career Analysis:
+        Experience: [X] years total
+        Key Achievements:
+        - [Quantified achievement 1]
+        - [Quantified achievement 2]
+        Progression Pattern: [Analysis of career progression]
+
+        Top Recommendations:
+
+        1. [Job Title] - £[Median Salary]
+           Match Score: [X/10]
+           Why This Fits:
+           - [Reference specific achievement from their history]
+           - [How it builds on demonstrated capabilities]
+           - [Location considerations]
+
+           Relevant Achievements:
+           - [Past achievement that directly transfers]
+           - [Quantified result that applies]
+
+           Development Needs:
+           - [Required qualification vs. education level]
+           - [Skill gap vs. wanted skills]
+
+           Transition Plan:
+           - [Immediate step based on background]
+           - [Training aligned with education level]
+           - [Local opportunity to gain experience]
+
+        [Repeat for each recommendation]
+
+        Remember to:
+        - Focus heavily on quantified achievements from job details
+        - Consider geographical progression in career history
+        - Account for education level in qualification requirements
+        - Map progression between similar industries
+        - Identity transferable skills from detailed job descriptions
+        - Factor in tenure length in each role
+        - Consider proximity of recommended roles to current location
+        - Balance formal education with practical experience
+        - Align recommendations with demonstrated progression rate
+        """),
             MessagesPlaceholder(variable_name="messages"),
             ("human", "{message}")
         ]),
         AgentType.GENERAL: ChatPromptTemplate.from_messages([
-            ("system", """You are a UK-focused career assistant.
+            ("system", """You are a UK-focused career assistant called Veridian.
             Keep responses concise and well-structured with:
             • Clear bullet points for key points
             • Short paragraphs (2-3 sentences max)
             • Line breaks between sections
             • Use markdown formatting
+             
+            You will make sure you have this information below, if you do not you will quickly ask for it:
             
-            Cover these areas briefly:
-            • Current situation (job, skills, education)
-            • Goals and constraints
-            • 2-3 tailored recommendations"""),
+            ## Personal Career Profile:
+        
+            **Jobs:**
+            - **Title:** Job title
+            - **Location:** City, Region, Country
+            - **Dates:**
+            - **Start:** MMM YYYY
+            - **End:** MMM YYYY or Present
+            - **Details:**
+            - Detailed achievement or responsibility 1
+            - Detailed achievement or responsibility 2
+
+            **Education:**
+            - **Level:** education level
+            - **Details:** specific grades or qualifications
+
+            **Skills:**
+            - Current skills list
+
+            **Wanted Skills:**
+            - Desired skills list
+
+            **Location:**
+            - current location
+            
+            """),
             MessagesPlaceholder(variable_name="messages"),
             ("human", "{message}")
         ]),
@@ -342,7 +462,7 @@ ALWAYS write in this language: english.
             first = True
             async for msg, metadata in self.workflow.astream(state, stream_mode="messages"):
                 if msg.content and not isinstance(msg, HumanMessage):
-                    if msg.content not in [AgentType.CAREER, AgentType.GENERAL]:
+                    if msg.content not in [agent_type for agent_type in AgentType]:
                         yield {"content": msg.content}
                     # print(f"Yielding content chunk: {msg.content}")
 
