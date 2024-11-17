@@ -83,8 +83,6 @@ async def chat(request: ChatRequest):
         return "Sorry, something went wrong. Please try again later."
 
 
-
-
 @app.post("/user-profile")
 async def create_profile(user_profile: UserProfile):
     try:

@@ -54,7 +54,7 @@ class GroqServices:
                 "details": "specific grades or qualifications"
             },
             "skills": ["Current skills list"],
-            "wanted_skills": ["Desired skills list"],
+            "wanted_skills": "Desired skills list",
             "location": "current location"
         }
 
@@ -88,7 +88,7 @@ class GroqServices:
            - Consider location compatibility
            - Factor in educational requirements vs. their background
 
-        4. Provide a ranked list of 3-5 recommended jobs, including:
+        4. Provide a ranked list of 1-3 recommended jobs, including:
            - Job title and median salary
            - Alignment with their proven achievements
            - How their quantifiable results transfer to the new role
@@ -134,39 +134,6 @@ class GroqServices:
 
         [Repeat for each recommendation]
 
-        Example Input:
-        {
-            "jobs": [
-                {
-                    "title": "Assembly Line Supervisor",
-                    "location": "Birmingham, England, United Kingdom",
-                    "dates": {
-                        "start": "Jun 2019",
-                        "end": "Present"
-                    },
-                    "details": [
-                        "Managed production schedules and coordinated with suppliers to ensure timely delivery of auto parts, resulting in a 98% on-time production rate",
-                        "Implemented a new quality control process that increased efficiency by 20%"
-                    ]
-                }
-            ],
-            "education": {
-                "level": "high-school",
-                "details": "GCSE: 2Bs, 4Cs, 3Ds"
-            },
-            "skills": ["Line Management", "Quality Control"],
-            "wanted_skills": ["plumbing"],
-            "location": "Birmingham"
-        }
-
-        [
-            {
-                "description": "Maintenance Supervisor",
-                "code": "5250",
-                "median": 35000.0
-            }
-        ]
-
         Remember to:
         - Focus heavily on quantified achievements from job details
         - Consider geographical progression in career history
@@ -191,20 +158,15 @@ class GroqServices:
                     "content": user_prompt
                 }
             ],
-            temperature=0.5,
+            temperature=0.3,
             max_tokens=3500,
-            top_p=1,
-            stream=True,
+            top_p=0.95,
+            stream=False,
             stop=None
         )
 
         # Collect the streaming response into a single string
-        full_response = ""
-        for chunk in completion:
-            if chunk.choices[0].delta.content is not None:
-                full_response += chunk.choices[0].delta.content
-        
-        return full_response
+        return completion.choices[0].message.content
 
 
     @staticmethod
@@ -212,7 +174,6 @@ class GroqServices:
         try:
             with open(file_path, 'r') as file:
                 job_data = json.load(file)
-
             return job_data
 
         except FileNotFoundError:

@@ -31,8 +31,8 @@ class UserProfile(BaseModel):
     Represents a user's professional profile
     """
     jobs: List[Job] = Field()
-    education: Education = Field()
+    education: List[Education] = Field()
     skills: List[str] = Field()
     location: str = Field()
-    wanted_skills: List[str] = Field()
+    wanted_skills: str = Field()
 
