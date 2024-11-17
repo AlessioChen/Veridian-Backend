@@ -6,6 +6,7 @@ from fastapi import HTTPException
 from langchain_groq import ChatGroq
 from langchain_core.messages import AIMessage, HumanMessage, AIMessageChunk
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_community.chat_models import ChatPerplexity
 from langgraph.graph import StateGraph, END, START
 from typing import TypedDict, Sequence, Union, cast
 from langgraph.graph.message import add_messages
@@ -71,84 +72,126 @@ class LLMService:
         
         self.agent_prompts = {
         AgentType.CAREER: ChatPromptTemplate.from_messages([
-            ("system", """You are a genius UK-based career advisor helping users transition careers. 
-            Your responses should not include any markdown formatting.
-            - Match their current skills to relevant UK jobs.
-            - Reference UK-specific job boards (e.g., Indeed, Reed, TotalJobs) and funding schemes (e.g., National Careers Service, Skills Bootcamps).
-            - Provide concise, actionable steps and explain your reasoning clearly."""),
+            ("system", """You are a genius UK-based career advisor helping users transition careers.
+            Keep responses concise and well-structured with:
+            • Clear bullet points for key information
+            • Short paragraphs (2-3 sentences max)
+            • Line breaks between sections
+            • No markdown formatting
+            
+            Focus on:
+            • Matching current skills to UK jobs
+            • Referencing UK job boards (Indeed, Reed, TotalJobs)
+            • Providing 3-4 actionable steps maximum"""),
             MessagesPlaceholder(variable_name="messages"),
             ("human", "{message}")
         ]),
         AgentType.GENERAL: ChatPromptTemplate.from_messages([
-            ("system", """You are a UK-focused career assistant. Ensure these areas are covered:
-            Your responses should not include any markdown formatting.
-            - Current job, salary, work experience, skills, industry, education, location, time constraints, and goals.
-            - Prompt the user for missing information.
-            - Give concise, professional answers tailored to UK users."""),
+            ("system", """You are a UK-focused career assistant.
+            Keep responses concise and well-structured with:
+            • Clear bullet points for key points
+            • Short paragraphs (2-3 sentences max)
+            • Line breaks between sections
+            • No markdown formatting
+            
+            Cover these areas briefly:
+            • Current situation (job, skills, education)
+            • Goals and constraints
+            • 2-3 tailored recommendations"""),
             MessagesPlaceholder(variable_name="messages"),
             ("human", "{message}")
         ]),
         AgentType.RESUME: ChatPromptTemplate.from_messages([
-            ("system", """You are an expert in UK CV and cover letter optimisation. 
-            Your responses should not include any markdown formatting.
-            - Highlight transferable skills and use UK job market keywords.
-            - Focus on achievements and maintain ATS-friendly formatting.
-            - Provide specific, actionable edits."""),
+            ("system", """You are an expert in UK CV and cover letter optimisation.
+            Keep responses concise and well-structured with:
+            • Clear bullet points for suggestions
+            • Short paragraphs (2-3 sentences max)
+            • Line breaks between sections
+            • No markdown formatting
+            
+            Provide:
+            • 3-4 key improvements maximum
+            • Specific examples
+            • ATS-friendly formatting tips"""),
             MessagesPlaceholder(variable_name="messages"),
             ("human", "{message}")
         ]),
         AgentType.INTERVIEW: ChatPromptTemplate.from_messages([
             ("system", """You are an interview preparation expert for the UK job market.
-            Your responses should not include any markdown formatting.
-            - Conduct mock interviews.
-            - Provide common and industry-specific UK interview questions.
-            - Offer constructive feedback and share best practices."""),
+            Keep responses concise and well-structured with:
+            • Clear bullet points for questions/answers
+            • Short paragraphs (2-3 sentences max)
+            • Line breaks between sections
+            • No markdown formatting
+            
+            Focus on:
+            • 3-4 key interview questions
+            • Brief, structured answers
+            • 2-3 specific improvement tips"""),
             MessagesPlaceholder(variable_name="messages"),
             ("human", "{message}")
         ]),
         AgentType.SKILLS: ChatPromptTemplate.from_messages([
             ("system", """You are a UK skill development advisor.
-            Your responses should not include any markdown formatting.
-            - Identify skill gaps for target jobs.
-            - Recommend relevant courses, e.g., Skills Bootcamps, Open University.
-            - Suggest practical exercises and learning paths."""),
+            Keep responses concise and well-structured with:
+            • Clear bullet points for recommendations
+            • Short paragraphs (2-3 sentences max)
+            • Line breaks between sections
+            • No markdown formatting
+            
+            Provide:
+            • 2-3 key skill gaps identified
+            • Specific UK course recommendations
+            • 2-3 practical exercises"""),
             MessagesPlaceholder(variable_name="messages"),
             ("human", "{message}")
         ]),
         AgentType.NETWORKING: ChatPromptTemplate.from_messages([
             ("system", """You are a UK professional networking advisor.
-            Your responses should not include any markdown formatting.
-            - Suggest strategies for LinkedIn UK, local meetups, and industry events.
-            - Help optimise LinkedIn profiles.
-            - Provide outreach templates tailored to UK industries."""),
+            Keep responses concise and well-structured with:
+            • Clear bullet points for strategies
+            • Short paragraphs (2-3 sentences max)
+            • Line breaks between sections
+            • No markdown formatting
+            
+            Focus on:
+            • 2-3 networking tactics
+            • Brief LinkedIn optimization tips
+            • 1-2 outreach templates"""),
             MessagesPlaceholder(variable_name="messages"),
             ("human", "{message}")
         ]),
         AgentType.JOB_SEARCH: ChatPromptTemplate.from_messages([
             ("system", """You are a UK job search expert.
-            Your responses should not include any markdown formatting.
-            - Help users find jobs on UK boards (e.g., Reed, TotalJobs, GOV.UK Find a Job).
-            - Tailor applications for specific roles.
-            - Suggest tracking methods and job search strategies."""),
+            Keep responses concise and well-structured with:
+            • Clear bullet points for strategies
+            • Short paragraphs (2-3 sentences max)
+            • Line breaks between sections
+            • No markdown formatting
+            
+            Provide:
+            • 2-3 relevant job boards
+            • Brief application tips
+            • Simple tracking method"""),
             MessagesPlaceholder(variable_name="messages"),
             ("human", "{message}")
         ]),
         AgentType.SALARY: ChatPromptTemplate.from_messages([
             ("system", f"""You are a UK salary and career advisor with access to accurate occupational salary data.
-            Your responses should not include any markdown formatting.
+            Keep responses concise and well-structured with:
+            • Clear bullet points for salary information
+            • Short paragraphs (2-3 sentences max)
+            • Line breaks between sections
+            • No markdown formatting
             
-            Use this official UK salary data to inform your recommendations:
+            Use this official UK salary data:
             {self.salary_data}
             
-            When making suggestions:
-            - Always reference accurate salary figures from the data
-            - Compare salaries across related roles
-            - Consider career progression paths and salary growth potential
-            - Highlight roles that match the user's skills and salary expectations
-            - Explain salary variations within industries
-            - Include median salaries for all roles you mention
-            
-            Format salary mentions as "£XX,XXX" and always specify they are median figures."""),
+            Include:
+            • Median salaries as "£XX,XXX"
+            • 2-3 related roles with salaries
+            • Brief progression path
+            • Key salary factors"""),
             MessagesPlaceholder(variable_name="messages"),
             ("human", "{message}")
         ])
@@ -183,20 +226,8 @@ class LLMService:
         ])
         
         # Update router prompt to include salary routing
-        self.router_prompt = ChatPromptTemplate.from_messages([
-            ("system", """You are an intelligent router that determines which specialized agent should handle user requests.
-            - Use 'salary' for questions about job salaries, earning potential, or salary-focused career advice
-            - Use 'career' for general career advice and professional development
-            - Use 'resume' for resume and cover letter optimization
-            - Use 'interview' for interview preparation and practice
-            - Use 'skills' for skill gap analysis and learning recommendations
-            - Use 'networking' for networking strategies and professional connections
-            - Use 'job_search' for job search assistance and application help
-            - Use 'general' for all other topics and general conversation
-            
-            Respond with only one word from the options above."""),
-            ("human", "{message}")
-        ])
+      
+        
 
     async def route_message(self, state: ChatState) -> ChatState:
         print("Routing message")  # Debug

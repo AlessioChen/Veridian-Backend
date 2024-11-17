@@ -32,3 +32,4 @@ websockets==14.1
 yarl==1.17.1
 langchain
 langgraph
+langchain_community
