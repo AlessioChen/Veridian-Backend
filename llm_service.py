@@ -385,7 +385,7 @@ ALWAYS write in this language: english.
 
     async def route_message(self, state: ChatState) -> ChatState:
         print("Routing message")  # Debug
-        messages = state["messages"]
+        messages = state["messages"]    
         last_message = cast(HumanMessage, messages[-1])
         
         chain = self.router_prompt | self.router_llm
