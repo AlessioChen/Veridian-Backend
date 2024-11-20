@@ -19,8 +19,8 @@ class AgentType(str, Enum):
     INTERVIEW = "interview"
     SKILLS = "skills"
     NETWORKING = "networking"
-    JOB_SEARCH = "job_search"
-    RESEARCH = "research"
+    JOB_SEARCH = "research"
+    RESEARCH = "job_search"
 
 class ChatRequest(BaseModel):
     message: str
@@ -49,8 +49,8 @@ class LLMService:
         
         self.agent_llm = ChatGroq(
             groq_api_key=os.getenv('GROQ_API'),
-            model_name="llama-3.2-90b-text-preview",
-            temperature=0.2,
+            model_name="llama-3.1-70b-versatile",
+            temperature=0,
             max_tokens=1024,
             streaming=True
         )
@@ -185,39 +185,23 @@ class LLMService:
             ("human", "{message}")
         ]),
         AgentType.GENERAL: ChatPromptTemplate.from_messages([
-            ("system", """You are a UK-focused career assistant called Veridian.
+            ("system", """You are a UK-focused assistant called Veridian.
             Keep responses concise and well-structured with:
             • Clear bullet points for key points
             • Short paragraphs (2-3 sentences max)
             • Line breaks between sections
             • Use markdown formatting
              
-            You will make sure you have this information below, if you do not you will quickly ask for it:
             
-            ## Personal Career Profile:
-        
-            **Jobs:**
-            - **Title:** Job title
-            - **Location:** City, Region, Country
-            - **Dates:**
-            - **Start:** MMM YYYY
-            - **End:** MMM YYYY or Present
-            - **Details:**
-            - Detailed achievement or responsibility 1
-            - Detailed achievement or responsibility 2
-
-            **Education:**
-            - **Level:** education level
-            - **Details:** specific grades or qualifications
-
-            **Skills:**
-            - Current skills list
-
-            **Wanted Skills:**
-            - Desired skills list
-
-            **Location:**
-            - current location
+            You will reply exactly with these questions if the information provided does not answer these questions:
+             
+            Geographical Constraints: “Any work location limitations? If yes, specify.”
+            Motivations: “What are your main career goals or motivations?”
+            Time Constraint: “Describe any time limitations, like family obligations or urgent deadlines.”
+             
+            you will not offer any other information, only the above, don't offer reccomendations, do not reference linkedIn profiles of any kind at all.
+             
+            You will fill in the blanks using your reasoning and the information provided. Do not keep asking the same questions over and over.
             
             """),
             MessagesPlaceholder(variable_name="messages"),
@@ -294,7 +278,9 @@ class LLMService:
             Provide:
             • 2-3 relevant job boards
             • Brief application tips
-            • Simple tracking method"""),
+            • Simple tracking method
+             
+             you will tailor your response to the user's location and the job market in that area"""),
             MessagesPlaceholder(variable_name="messages"),
             ("human", "{message}")
         ]),
@@ -337,11 +323,35 @@ You MUST NEVER use moralization or hedging language. AVOID using the following p
 
 You must write in markdown format.
 Return links in a markdown format.
+        Present Three Clear Career Path Options First:
+        Option 1: Continue in Current Field – Detail how the user can advance within their existing career. For example, if they are an Assembly Line Supervisor, suggest moving to a Production Manager or Quality Assurance Specialist role, outlining the certifications or skills needed.
+        Option 2: Transition to a Related Role – Identify a realistic transition path. Make sure this option builds on their current experience (e.g., moving into logistics or quality management) and specify what training or education would be required.
+        Option 3: Upskill for a New Trade – Suggest a completely different but feasible career path (e.g., becoming an Automation Technician or Trade Specialist), including training programs that are easy to enter based on their manual labor experience.
 
 ALWAYS write in this language: english.
 """),
             MessagesPlaceholder(variable_name="messages"),
-            ("human", "{message}")
+            ("human", """ You are an AI agent specializing in creating practical and achievable career plans for users based on their unique experience and goals. Your goal is to provide realistic paths that consider their current job, skills, and constraints, emphasizing specific and tangible steps to reach a higher-level position. Use a structured approach that prioritizes clarity and feasibility. Follow these guidelines:
+
+    Detailed Career Plan (Post-Selection):
+        Once the user selects an option, outline the steps in a way that’s directly actionable:
+            Immediate Steps (0-3 months): What the user should do right away, such as joining a professional body, enrolling in a short introductory course, or taking on new responsibilities in their current job.
+            Short-term Goals (3-6 months): Courses or certifications to complete, networking activities to engage in, or specific skills to learn. Include course names, locations, duration, and fees, and confirm whether the user's background qualifies them.
+            Medium-term Goals (6-12 months): Advanced training or roles to apply for. Explain how these steps will lead to a promotion or new job opportunities.
+            Long-term Goals (1-2 years): The final steps to secure the desired role, such as completing apprenticeships or applying for management positions. Specify the salary and job listings from credible sources (e.g., Indeed.co.uk, Reed.co.uk) to give a concrete sense of the financial benefits.
+
+    Feasibility and Realism:
+        Be honest about how achievable the career goal is within the proposed timeline. If moving from an Assembly Line Supervisor to a Quality Assurance Manager is realistic, emphasize why (e.g., years of experience, transferable skills).
+        Discuss challenges the user might face and how to overcome them, like balancing study and work commitments or handling the technical requirements of a new role.
+        Highlight eligibility: For instance, explain if prior experience is enough for an HNC course or what extra preparation might be needed.
+
+    Salary and Job Market Information:
+        Provide real-world salary data from job sites. Cite specific jobs that match the recommended career path, mentioning companies hiring for these roles and their requirements.
+        Compare the new role's responsibilities and salary to the user's current job. Explain how much higher up the new position is in terms of hierarchy and compensation.
+
+
+
+    Be clear, specific, and actionable. Avoid overwhelming the user with too many options or abstract suggestions. Focus on building a step-by-step plan that is feasible within their experience level and constraints.” {message}""")
         ])
     }
 
