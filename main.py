@@ -30,6 +30,11 @@ app.add_middleware(
 )
 
 
+
+@app.get('/')
+def hello_world():
+    return "Hello,World"
+    
 class SearchRequest(BaseModel):
     query: str
 
