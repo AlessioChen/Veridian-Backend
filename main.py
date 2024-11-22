@@ -13,6 +13,13 @@ from grounding_search import PerplexityGenericSearch
 from pathlib import Path
 import os
 
+class SearchRequest(BaseModel):
+    query: str
+
+class GenericSearchRequest(BaseModel):
+    query: str
+
+
 app = FastAPI()
 llm_service = LLMService()
 
@@ -35,11 +42,6 @@ app.add_middleware(
 def hello_world():
     return "Hello,World"
     
-class SearchRequest(BaseModel):
-    query: str
-
-class GenericSearchRequest(BaseModel):
-    query: str
 
 # Retrieves URLs from Perplexity in a JSON format use {"query":"MESSAGE"}
 @app.post("/url-search")
@@ -58,8 +60,6 @@ async def search(request: SearchRequest):
             status_code=500,
             content={"error": "Failed to perform search"}
         )
-
-
 
 
 # General chat endpoint, streaming and a multiagent system. Has the careers router.
