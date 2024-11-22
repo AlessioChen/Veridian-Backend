@@ -26,8 +26,6 @@ llm_service = LLMService()
 # Configuration
 MAX_FILE_SIZE = 25 * 1024 * 1024  # 25MB
 
-
-origins = ["http://localhost:3000", "http://127.0.0.1:8000", "http://localhost:8000", "http://127.0.0.1:5500", "http://localhost:5500"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
